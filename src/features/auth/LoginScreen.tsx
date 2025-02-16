@@ -7,20 +7,40 @@ import {
   Image,
   TouchableOpacity,
   ActivityIndicator,
+  Animated,
 } from 'react-native';
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useRef, useState} from 'react';
 import {loginStyles} from '@unistyles/authStyles';
 import {useStyles} from 'react-native-unistyles';
-import Animated from 'react-native-reanimated';
+
 import CustomText from '@components/global/CustomText';
 import BreakerText from '@components/ui/BreakerText';
 import PhoneInput from '@components/ui/PhoneInput';
 import {resetAndNavigate} from '@utils/NavigationUtils';
+import useKeyboardOffsetHeight from '@utils/useKeyboardOffsetHeight';
 
 const LoginScreen: FC = () => {
+  const animatedValue = useRef(new Animated.Value(0)).current;
+  const keyboardOffsetHeight = useKeyboardOffsetHeight();
   const [phoneNumber, setPhoneNumber] = useState('');
   const [loading, setLoading] = useState(false);
   const {styles} = useStyles(loginStyles);
+
+  useEffect(() => {
+    if (keyboardOffsetHeight == 0) {
+      Animated.timing(animatedValue, {
+        toValue: 0,
+        duration: 500,
+        useNativeDriver: true,
+      }).start();
+    } else {
+      Animated.timing(animatedValue, {
+        toValue: -keyboardOffsetHeight * 0.25,
+        duration: 500,
+        useNativeDriver: true,
+      }).start();
+    }
+  }, [keyboardOffsetHeight]);
 
   const handleLogin = async () => {
     setLoading(true);
@@ -30,7 +50,7 @@ const LoginScreen: FC = () => {
     }, 2000);
   };
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {flex: 1}]}>
       <StatusBar hidden={true} />
       <Image
         source={require('@assets/images/login.jpg')}
@@ -40,7 +60,15 @@ const LoginScreen: FC = () => {
         bounces={false}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
-        contentContainerStyle={styles.bottomContainer}>
+        style={[{flex: 1}, {transform: [{translateY: animatedValue}]}]}
+        contentContainerStyle={[
+          styles.bottomContainer,
+          {
+            paddingBottom: keyboardOffsetHeight
+              ? keyboardOffsetHeight + 20
+              : 20,
+          },
+        ]}>
         <CustomText
           fontFamily="Poppins-Bold"
           variant="h2"
