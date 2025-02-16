@@ -14,7 +14,8 @@ interface CustomTextProps {
     | 'Poppins-Regular'
     | 'Poppins-Black'
     | 'Poppins-Light'
-    | 'Poppins-Medium';
+    | 'Poppins-Medium'
+    | 'Montserrat-Bold';
 
   fontSize?: number;
   color?: string;

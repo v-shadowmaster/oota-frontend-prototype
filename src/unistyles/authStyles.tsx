@@ -35,10 +35,10 @@ export const loginStyles = createStyleSheet(({colors, device, border}) => ({
   },
   cover: {
     width: '100%',
-    height: device.height * 0.4,
+    height: device.height * 0.5,
     resizeMode: 'cover',
-    borderBottomEndRadius: 60,
-    borderBottomStartRadius: 60,
+    //borderBottomEndRadius: 60,
+    // borderBottomStartRadius: 60,
   },
   bottomContainer: {
     width: '100%',
