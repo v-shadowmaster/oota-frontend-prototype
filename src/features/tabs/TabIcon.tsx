@@ -21,6 +21,7 @@ const styles = {
 const tabStyles: ViewStyle = {
   justifyContent: 'center',
   alignItems: 'center',
+  paddingHorizontal: 8,
 };
 
 const textStyleInActive: TextStyle = {
@@ -34,7 +35,6 @@ const textStyleActive: TextStyle = {
   textAlign: 'center',
   marginTop: 4,
   color: Colors.active,
-  fontSize: RFValue(9.5),
 };
 
 const TabIcon: FC<TabProps> = memo(({name}) => {
@@ -42,11 +42,17 @@ const TabIcon: FC<TabProps> = memo(({name}) => {
     <View style={tabStyles}>
       <Icon
         iconFamily="MaterialCommunityIcons"
-        name="menu"
-        size={18}
+        name={
+          name === 'Delivery'
+            ? 'truck-delivery-outline'
+            : name === 'Reorder'
+            ? 'refresh'
+            : 'face-man-profile'
+        }
+        size={22}
         color="#000000"
       />
-      <CustomText style={textStyleActive}>{name}</CustomText>
+      <CustomText style={[{fontFamily: 'Poppins-Bold'}]}>{name}</CustomText>
     </View>
   );
 });
@@ -56,11 +62,19 @@ const TabIconFocused: FC<TabProps> = memo(({name}) => {
     <View style={tabStyles}>
       <Icon
         iconFamily="MaterialCommunityIcons"
-        name="menu"
-        size={18}
+        name={
+          name === 'Delivery'
+            ? 'truck-delivery'
+            : name === 'Reorder'
+            ? 'refresh'
+            : 'face-man-profile'
+        }
+        size={22}
         color={Colors.active}
       />
-      <CustomText style={textStyleActive}>{name}</CustomText>
+      <CustomText style={[textStyleActive, {fontFamily: 'Poppins-Bold'}]}>
+        {name}
+      </CustomText>
     </View>
   );
 });

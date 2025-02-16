@@ -26,7 +26,7 @@ export const SharedStateProvider: FC<{children: ReactNode}> = ({children}) => {
   );
 };
 
-export const useShareState = () => {
+export const useSharedState = () => {
   const context = useContext(SharedStateContext);
   if (context === undefined) {
     throw new Error('useShareState must be used within a SharedStateProvider ');
