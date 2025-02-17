@@ -2,6 +2,7 @@ import {UnistylesRegistry} from 'react-native-unistyles';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {Dimensions} from 'react-native';
 import {Colors, Fonts} from './Constants';
+import {typography} from './typography';
 
 export const RV = (number: number) => RFValue(number);
 
@@ -40,6 +41,11 @@ export const defaultTheme = {
     full: 200,
   },
 } as const;
+
+export const lightTheme = {
+  // ...existing theme properties
+  typography,
+};
 
 declare module 'react-native-unistyles' {
   interface UnistylesThemes {
