@@ -11,7 +11,7 @@ import CustomText from '@components/global/CustomText';
 const LocationHeader: FC = () => {
   const {scrollYGlobal} = useSharedState();
   const {styles} = useStyles(homeStyles);
-  const textColor = '#E23744'; // Zomato red color
+  const textColor = '#fff'; // Zomato red color
 
   const opacityFadingStyles = useAnimatedStyle(() => {
     const opacity = interpolate(scrollYGlobal.value, [0, 80], [1, 0]);
@@ -21,53 +21,51 @@ const LocationHeader: FC = () => {
   });
 
   return (
-    <Animated.View style={[opacityFadingStyles, {backgroundColor: '#fff'}]}>
+    <Animated.View style={[opacityFadingStyles]}>
+      <SafeAreaView />
       <View style={styles.flexRowBetween}>
         <View style={styles.flexRowGap}>
           <Icon
             name="map-marker"
-            color="#000"
+            color="#fff"
             iconFamily="MaterialCommunityIcons"
-            size={38}
+            size={28}
           />
-          <View style={styles.locationTextContainer}>
-            <TouchableOpacity>
-              <View style={styles.locationMainRow}>
-                <CustomText
-                  style={[
-                    styles.locationMainText,
-                    {fontFamily: 'Poppins-Bold', fontSize: 20},
-                  ]}>
-                  KR Puram, Bengaluru
-                </CustomText>
-                <Icon
-                  name="chevron-down"
-                  color="#000"
-                  iconFamily="Ionicons"
-                  size={20}
-                />
-              </View>
-              <CustomText
-                style={[
-                  styles.locationSubText,
-                  {fontFamily: 'Poppins-Medium', fontSize: 16, color: 'gray'},
-                ]}>
-                Karnataka, India
-              </CustomText>
-            </TouchableOpacity>
-          </View>
+        </View>
+        <View>
+          <TouchableOpacity style={styles.flexRowGap}>
+            <CustomText
+              variant="h5"
+              color={textColor}
+              fontFamily="Poppins-Bold">
+              KR Puram, Bengaluru
+            </CustomText>
+            <Icon
+              name="chevron-down"
+              color="#fff"
+              iconFamily="MaterialCommunityIcons"
+              size={20}
+            />
+          </TouchableOpacity>
+
+          <CustomText color={textColor} fontFamily="Poppins-Bold">
+            Karnataka, India
+          </CustomText>
         </View>
 
-        <TouchableOpacity style={styles.profileAvatar}>
-          <Image
-            source={require('@assets/images/profile.jpg')}
-            style={{
-              width: '100%',
-              height: '100%',
-              resizeMode: 'cover',
-            }}
-          />
-        </TouchableOpacity>
+        <View style={styles.flexRowGap}>
+          <TouchableOpacity style={styles.profileAvatar}>
+            <Image
+              source={require('@assets/images/profile.jpg')}
+              style={{
+                width: '100%',
+                height: '100%',
+                resizeMode: 'cover',
+                borderRadius: 20,
+              }}
+            />
+          </TouchableOpacity>
+        </View>
       </View>
     </Animated.View>
   );

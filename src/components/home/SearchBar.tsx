@@ -51,14 +51,14 @@ const SearchBar = () => {
   }));
 
   return (
-    <TouchableOpacity activeOpacity={0.7} style={styles.searchBarWrapper}>
+    <TouchableOpacity activeOpacity={0.8} style={styles.searchBarWrapper}>
       <View style={styles.searchContainer}>
         <View style={styles.searchIconContainer}>
           <Icon
             iconFamily="Ionicons"
             name="search-outline"
-            color="#8A8A8A"
-            size={20}
+            color="#E23744"
+            size={22}
           />
         </View>
         <Animated.View style={[styles.searchTextContainer, opacityStyle]}>

@@ -92,7 +92,7 @@ const LoginScreen: FC = () => {
           ) : (
             <CustomText
               color="#fff"
-              style={{fontFamily: 'Poppins-Medium'}}
+              style={{fontFamily: 'Poppins-Bold'}}
               variant="h5">
               Continue
             </CustomText>

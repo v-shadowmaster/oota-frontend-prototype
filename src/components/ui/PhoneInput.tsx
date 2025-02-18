@@ -27,7 +27,7 @@ const PhoneInput: FC<PhoneInputProps> = ({
       style={styles.container}
       onPress={() => inputRef.current?.focus()}>
       <View style={styles.countryPickerContainer}>
-        <CustomText variant="h5">📞</CustomText>
+        <CustomText variant="h5">🇮🇳</CustomText>
         <Icon
           iconFamily="Ionicons"
           name="caret-down-sharp"

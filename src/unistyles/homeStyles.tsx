@@ -7,10 +7,8 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
   container: {
     flex: 1,
     backgroundColor: colors.background,
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
   topHidingContainer: {
-    marginTop: isBannerHeight,
     backgroundColor: colors.background,
   },
   topHeader: {
@@ -21,12 +19,10 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
   },
   animatedText: {
     fontSize: RFValue(10.5),
-    fontFamily: 'Poppins-Bold',
   },
   animatedSubText: {
     fontSize: RFValue(7),
     lineHeight: 9,
-    fontFamily: 'Poppins-Bold',
   },
   exploreContainer: {
     justifyContent: 'center',
@@ -37,14 +33,11 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '100%',
-    paddingVertical: 4,
-    backgroundColor: '#fff',
   },
   flexRowGap: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 12,
+    gap: 4,
   },
   flexRow: {
     flexDirection: 'row',
@@ -71,9 +64,7 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
   },
   lottie: {
     width: '100%',
-    height: '100%',
-    position: 'absolute',
-    bottom: -20, // Adjust this value to position the animation
+    bottom: -1, // Adjust this value to position the animation
     opacity: 0.6, // Add some transparency
   },
   rollingText: {
@@ -107,19 +98,15 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     bottom: 2,
   },
   lottieContainer: {
-    backgroundColor: '#E23744', // Zomato red color
-    height:
-      Platform.OS === 'android'
-        ? device.height * 0.32 + (StatusBar.currentHeight || 0)
-        : device.height * 0.35,
-    justifyContent: 'flex-end',
+    backgroundColor: '#E23744',
+    height: device.height * 0.5,
+    width: '100%',
     position: 'absolute',
-    zIndex: -1,
+    top: 0,
     left: 0,
     right: 0,
-    top: -(StatusBar.currentHeight ?? 0), // Adjust for status bar
     overflow: 'hidden',
-    width: '100%',
+    zIndex: 1,
   },
   locationTextContainer: {
     flexDirection: 'column',
@@ -132,37 +119,37 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
   },
   locationMainText: {
     fontSize: RFValue(16),
-    fontFamily: 'Poppins-SemiBold',
-    color: '#1C1C1C', // Dark text color
+
+    color: '#fff',
   },
   locationSubText: {
     fontSize: RFValue(12),
-    fontFamily: 'Poppins-Regular',
     marginTop: 2,
-    color: '#666666', // Lighter text color
-    opacity: 0.9,
+    color: '#fff',
+    opacity: 0.8,
   },
   headerContainer: {
     position: 'relative',
     width: '100%',
-    paddingHorizontal: 8, // Consistent padding for all header content
+    paddingHorizontal: 16,
+    backgroundColor: 'transparent',
   },
   padding: {
     paddingHorizontal: 12, // Match headerContainer padding
   },
   searchBarWrapper: {
-    paddingHorizontal: 8,
+    paddingHorizontal: 16,
     paddingVertical: 12,
     width: '100%',
     backgroundColor: 'transparent',
   },
   searchContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
     flexDirection: 'row',
     alignItems: 'center',
     borderRadius: 12,
     paddingVertical: 12,
-    paddingHorizontal: 18,
+    paddingHorizontal: 16,
     elevation: 4,
     shadowColor: '#000',
     shadowOffset: {
@@ -182,9 +169,58 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
   },
   searchText: {
     fontSize: RFValue(13),
-    fontFamily: 'Poppins-Regular',
     color: '#8A8A8A',
     includeFontPadding: false,
   },
-  textContainer: {},
+  headerWrapper: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: 'transparent',
+    zIndex: 2,
+  },
+  graphicsWrapper: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 1,
+  },
+  tabContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    paddingHorizontal: 16,
+    marginBottom: 16,
+  },
+  tab: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 20,
+    marginRight: 8,
+  },
+  leftTab: {
+    backgroundColor: colors.background,
+  },
+  flexRowCenter: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    paddingHorizontal: 16,
+  },
+
+  rightTab: {
+    backgroundColor: colors.background,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+  },
+
+  exploreSectionContainer: {
+    backgroundColor: colors.background,
+    paddingTop: 16,
+  },
 }));

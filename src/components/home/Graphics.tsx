@@ -28,19 +28,16 @@ const Graphics = () => {
   });
 
   return (
-    <Animated.View style={[styles.lottieContainer, animatedStyle]}>
+    <View style={styles.lottieContainer} pointerEvents="none">
       <LottieView
-        ref={animationRef}
         style={styles.lottie}
-        source={require('@assets/animations/pongal.json')}
+        source={require('@assets/animations/chris.json')}
         autoPlay
-        loop
-        speed={0.5}
-        resizeMode="cover"
+        loop={Platform.OS !== 'android'}
         renderMode="HARDWARE"
         hardwareAccelerationAndroid
       />
-    </Animated.View>
+    </View>
   );
 };
 
