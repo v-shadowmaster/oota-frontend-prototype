@@ -8,6 +8,7 @@ import Icon from '@components/ui/Icon';
 import RecommendedList from '@components/List/RecommendedList';
 import BreakerText from '@components/ui/BreakerText';
 import RegularFoodList from '@components/List/RegularFoodList';
+import HorizontalLine from '@components/ui/HorizontalLine';
 
 const ExploreSection = () => {
   const [tabSelected, settabSelected] = useState(1);
@@ -57,7 +58,9 @@ const ExploreSection = () => {
           marginTop: 10,
         }}
         color={Colors.text}
-        fontSize={18}>{`What's on your mind`}</CustomText>
+        fontSize={18}>
+        What's on your mind
+      </CustomText>
 
       <RegularFoodList />
 
@@ -68,11 +71,9 @@ const ExploreSection = () => {
           marginTop: 10,
         }}
         color={Colors.text}
-        fontSize={18}>{`All Restaurants`}</CustomText>
-
-      <RecommendedList />
-
-      <RecommendedList />
+        fontSize={18}>
+        All Restaurants
+      </CustomText>
     </View>
   );
 };

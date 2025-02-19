@@ -10,8 +10,9 @@ import ExploreSection from '@components/home/ExploreSection';
 import RestaurantLIst from './RestaurantLIst';
 import {useStyles} from 'react-native-unistyles';
 import {useSharedState} from '@features/tabs/SharedContext';
-import {useAnimatedStyle, withTiming} from 'react-native-reanimated';
+import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
 import {RestaurantStyles} from '@unistyles/restaurantStyles';
+import BackToTopButton from '@components/ui/BackToTopButton';
 
 const sectionedData = [
   {title: 'Explore', data: [{}], renderItem: () => <ExploreSection />},
@@ -56,6 +57,7 @@ const MainList: FC = () => {
     });
   };
 
+  // Back to top button logic
   const backTopStyle = useAnimatedStyle(() => {
     const isScrollingUp =
       scrollYGlobal?.value < previousScrollYTopButton.current &&
@@ -94,14 +96,16 @@ const MainList: FC = () => {
     setIsRestaurantsVisible(restaurantVisible);
   };
 
-
-  
   return (
     <>
+      <Animated.View style={[styles.backToTopButton, backTopStyle]}>
+        <BackToTopButton onPress={handleScrollToTop} />
+      </Animated.View>
       <SectionList
         sections={sectionedData}
         overScrollMode="always"
         onScroll={handleScroll}
+        ref={sectionListRef}
         scrollEventThrottle={16}
         bounces={false}
         nestedScrollEnabled
