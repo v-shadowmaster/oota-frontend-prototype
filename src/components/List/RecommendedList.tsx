@@ -1,9 +1,14 @@
-import {View, Image, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Image,
+  TouchableOpacity,
+  FlatList,
+  ScrollView,
+} from 'react-native';
 import React from 'react';
 import {useStyles} from 'react-native-unistyles';
 import {cardStyles} from '@unistyles/cardStyles';
 import {Colors} from '@unistyles/Constants';
-import Animated from 'react-native-reanimated';
 import Icon from '@components/ui/Icon';
 import ScalePress from '@components/ui/ScalePress';
 import {navigate} from '@utils/NavigationUtils';
@@ -16,26 +21,29 @@ const RecommendedList = () => {
 
   const renderItem = ({item}: any) => {
     return (
-      <ScalePress style={styles.itemContainer}>
+      <ScalePress
+        style={styles.itemContainer}
+        onPress={() => {
+          navigate('RestaurantScreen', {item: item});
+        }}>
         <View style={styles.imageContainer}>
           <Image source={item.imageUrl} style={styles.itemImage} />
+
           {item?.discount && (
             <View style={styles.discountWrapper}>
-              <CustomGradient
-                position="bottom"
-                style={styles.discountGradient}
-              />
               <View style={styles.discountContent}>
                 <CustomText
                   color="#fff"
                   fontSize={12}
-                  fontFamily="Poppins-Bold">
+                  fontFamily="Poppins-Bold"
+                  style={{fontFamily: 'Poppins-Bold'}}>
                   {item?.discount}
                 </CustomText>
                 <CustomText
                   color="#fff"
                   fontSize={10}
-                  fontFamily="Poppins-Medium">
+                  fontFamily="Poppins-Medium"
+                  style={{fontFamily: 'Poppins-Medium'}}>
                   {item?.discountAmount}
                 </CustomText>
               </View>
@@ -50,34 +58,18 @@ const RecommendedList = () => {
               size={20}
             />
           </TouchableOpacity>
-          <CustomGradient position="bottom" />
+          <CustomGradient position="bottom" mode="dark" />
         </View>
 
         <View style={styles.itemInfo}>
           <CustomText
-            fontSize={16}
+            fontSize={14}
             color={Colors.text}
             fontFamily="Poppins-Bold"
+            style={{fontFamily: 'Poppins-Bold'}}
             numberOfLines={1}>
             {item?.name}
           </CustomText>
-
-          <View style={styles.ratingContainer}>
-            <View style={styles.rating}>
-              <CustomText color="#fff" fontSize={12} fontFamily="Poppins-Bold">
-                {item?.rating}
-              </CustomText>
-              <Icon
-                iconFamily="MaterialCommunityIcons"
-                name="star"
-                color="#fff"
-                size={12}
-              />
-            </View>
-            <CustomText style={styles.cuisineText} numberOfLines={1}>
-              {item?.cuisine}
-            </CustomText>
-          </View>
 
           <View style={styles.timeDistance}>
             <View style={styles.flexRow}>
@@ -90,12 +82,16 @@ const RecommendedList = () => {
               <CustomText
                 fontSize={12}
                 color="#696969"
-                fontFamily="Poppins-Regular">
+                fontFamily="Poppins-Regular"
+                style={{fontFamily: 'Poppins-Regular'}}>
                 {item?.time}
               </CustomText>
             </View>
             <View style={styles.dot} />
-            <CustomText style={styles.distance}>{item?.distance}</CustomText>
+            <CustomText
+              style={[styles.distance, {fontFamily: 'Poppins-Regular'}]}>
+              {item?.distance}
+            </CustomText>
           </View>
         </View>
       </ScalePress>
@@ -103,14 +99,19 @@ const RecommendedList = () => {
   };
 
   return (
-    <Animated.FlatList
-      data={recommenedListData}
-      renderItem={renderItem}
-      keyExtractor={item => item.id.toString()}
+    <ScrollView
       horizontal
-      showsHorizontalScrollIndicator={false}
-      contentContainerStyle={styles.listContainer}
-    />
+      showsHorizontalScrollIndicator={true}
+      style={{marginTop: 16}}>
+      <FlatList
+        data={recommenedListData}
+        renderItem={renderItem}
+        keyExtractor={item => item.id.toString()}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.listContainer}
+      />
+    </ScrollView>
   );
 };
 

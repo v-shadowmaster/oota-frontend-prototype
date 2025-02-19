@@ -1,17 +1,16 @@
-import {View, Text, TouchableOpacity, Image} from 'react-native';
-import React, {FC} from 'react';
+import {View, SafeAreaView, TouchableOpacity, Image} from 'react-native';
+import React from 'react';
 import {useStyles} from 'react-native-unistyles';
 import {homeStyles} from '@unistyles/homeStyles';
 import {useSharedState} from '@features/tabs/SharedContext';
-import Animated, {useAnimatedStyle, interpolate} from 'react-native-reanimated';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import Animated, {interpolate, useAnimatedStyle} from 'react-native-reanimated';
 import Icon from '@components/ui/Icon';
 import CustomText from '@components/global/CustomText';
 
-const LocationHeader: FC = () => {
+const LocationHeader = () => {
   const {scrollYGlobal} = useSharedState();
   const {styles} = useStyles(homeStyles);
-  const textColor = '#fff'; // Zomato red color
+  const textColor = '#fff';
 
   const opacityFadingStyles = useAnimatedStyle(() => {
     const opacity = interpolate(scrollYGlobal.value, [0, 80], [1, 0]);
@@ -21,48 +20,55 @@ const LocationHeader: FC = () => {
   });
 
   return (
-    <Animated.View style={[opacityFadingStyles]}>
+    <Animated.View style={[opacityFadingStyles, {paddingTop: 10}]}>
       <SafeAreaView />
       <View style={styles.flexRowBetween}>
         <View style={styles.flexRowGap}>
           <Icon
             name="map-marker"
-            color="#fff"
+            color={textColor}
             iconFamily="MaterialCommunityIcons"
-            size={28}
+            size={32}
           />
-        </View>
-        <View>
-          <TouchableOpacity style={styles.flexRowGap}>
-            <CustomText
-              variant="h5"
-              color={textColor}
-              fontFamily="Poppins-Bold">
-              KR Puram, Bengaluru
-            </CustomText>
-            <Icon
-              name="chevron-down"
-              color="#fff"
-              iconFamily="MaterialCommunityIcons"
-              size={20}
-            />
-          </TouchableOpacity>
 
-          <CustomText color={textColor} fontFamily="Poppins-Bold">
-            Karnataka, India
-          </CustomText>
+          <View>
+            <TouchableOpacity style={styles.flexRow}>
+              <CustomText
+                variant="h5"
+                color={textColor}
+                fontFamily="Poppins-Bold"
+                style={{fontFamily: 'Poppins-Bold'}}>
+                #43 Kammasandra
+              </CustomText>
+              <Icon
+                name="chevron-down"
+                color={textColor}
+                iconFamily="MaterialCommunityIcons"
+                size={18}
+              />
+            </TouchableOpacity>
+
+            <CustomText
+              color={textColor}
+              fontFamily="Poppins-Medium"
+              style={{fontFamily: 'Poppins-Medium'}}>
+              Bengaluru , Karnakaka
+            </CustomText>
+          </View>
         </View>
 
         <View style={styles.flexRowGap}>
+          <TouchableOpacity style={styles.translation}>
+            <Image
+              source={require('@assets/images/translate.jpg')}
+              style={styles.translationIcon}
+            />
+          </TouchableOpacity>
+
           <TouchableOpacity style={styles.profileAvatar}>
             <Image
               source={require('@assets/images/profile.jpg')}
-              style={{
-                width: '100%',
-                height: '100%',
-                resizeMode: 'cover',
-                borderRadius: 20,
-              }}
+              style={styles.profileAvatar}
             />
           </TouchableOpacity>
         </View>

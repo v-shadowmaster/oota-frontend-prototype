@@ -1,5 +1,4 @@
-// ExploreSection.tsx
-import {View, Pressable} from 'react-native';
+import {View, Text, Pressable} from 'react-native';
 import React, {useState} from 'react';
 import {useStyles} from 'react-native-unistyles';
 import {homeStyles} from '@unistyles/homeStyles';
@@ -9,39 +8,50 @@ import Icon from '@components/ui/Icon';
 import RecommendedList from '@components/List/RecommendedList';
 
 const ExploreSection = () => {
-  const [tabSelected, setTabSelected] = useState(1);
+  const [tabSelected, settabSelected] = useState(1);
   const {styles} = useStyles(homeStyles);
 
   return (
-    <View style={styles.exploreSectionContainer}>
-      <View style={styles.tabContainer}>
+    <View style={[styles.topHidingContainer]}>
+      <View style={[styles.flexRowCenter]}>
         <Pressable
-          style={[styles.tab, styles.leftTab]}
-          onPress={() => setTabSelected(1)}>
+          style={[
+            styles.leftTab,
+            {borderColor: tabSelected == 1 ? Colors.active : Colors.tertiary},
+          ]}
+          onPress={() => settabSelected(1)}>
           <CustomText
-            color={tabSelected === 1 ? Colors.text : Colors.lightText}
-            fontFamily="Poppins-Medium">
+            style={{fontFamily: 'Poppins-Medium'}}
+            color={tabSelected == 1 ? Colors.text : Colors.lightText}>
             Recommended
           </CustomText>
         </Pressable>
         <Pressable
-          style={[styles.tab, styles.rightTab]}
-          onPress={() => setTabSelected(2)}>
+          style={[
+            styles.rightTab,
+            {borderColor: tabSelected == 2 ? Colors.active : Colors.tertiary},
+          ]}
+          onPress={() => settabSelected(2)}>
           <Icon
-            name="bookmark"
+            name="bookmark-outline"
             iconFamily="Ionicons"
-            color={tabSelected === 2 ? Colors.text : Colors.lightText}
+            color={tabSelected == 2 ? Colors.text : Colors.lightText}
             size={14}
           />
           <CustomText
-            color={tabSelected === 2 ? Colors.text : Colors.lightText}
-            fontFamily="Poppins-Medium">
-            Collection
+            style={{fontFamily: 'Poppins-Medium'}}
+            color={tabSelected == 2 ? Colors.text : Colors.lightText}>
+            Collections
           </CustomText>
         </Pressable>
       </View>
 
-      {tabSelected === 1 ? <RecommendedList /> : null}
+      <RecommendedList />
+      <RecommendedList />
+      <RecommendedList />
+      <RecommendedList />
+      <RecommendedList />
+      <RecommendedList />
     </View>
   );
 };

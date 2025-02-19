@@ -3,8 +3,6 @@ import {
   NativeSyntheticEvent,
   SectionList,
   StyleSheet,
-  Text,
-  View,
   ViewToken,
 } from 'react-native';
 import React, {FC, useRef, useState} from 'react';
@@ -13,6 +11,7 @@ import RestaurantLIst from './RestaurantLIst';
 import {useStyles} from 'react-native-unistyles';
 import {useSharedState} from '@features/tabs/SharedContext';
 import {useAnimatedStyle, withTiming} from 'react-native-reanimated';
+import {RestaurantStyles} from '@unistyles/restaurantStyles';
 
 const sectionedData = [
   {title: 'Explore', data: [{}], renderItem: () => <ExploreSection />},
@@ -24,7 +23,7 @@ const MainList: FC = () => {
   const previousScrollYTopButton = useRef<number>(0);
   const previousScrollY = useRef(0);
   const sectionListRef = useRef<SectionList>(null);
-  const {styles} = useStyles();
+  const {styles} = useStyles(RestaurantStyles);
 
   const [isRestaurantVisible, setIsRestaurantsVisible] = useState(false);
   const [isNearEnd, setIsNearEnd] = useState(false);
@@ -94,6 +93,9 @@ const MainList: FC = () => {
     );
     setIsRestaurantsVisible(restaurantVisible);
   };
+
+
+  
   return (
     <>
       <SectionList
@@ -105,7 +107,7 @@ const MainList: FC = () => {
         nestedScrollEnabled
         showsVerticalScrollIndicator={false}
         keyExtractor={(item, index) => index.toString()}
-        contentContainerStyle={{padding: 230}}
+        contentContainerStyle={styles.listContainer}
         stickySectionHeadersEnabled={true}
         viewabilityConfig={viewabilityConfig}
         onViewableItemsChanged={onViewableItemsChanged}

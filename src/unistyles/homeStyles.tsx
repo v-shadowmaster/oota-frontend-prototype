@@ -9,20 +9,23 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     backgroundColor: colors.background,
   },
   topHidingContainer: {
+    marginTop: isBannerHeight,
+
     backgroundColor: colors.background,
   },
   topHeader: {
     zIndex: 1,
     alignSelf: 'center',
-    paddingHorizontal: 4, // Reduced from 10
-    width: '100%',
+    paddingHorizontal: 10, // Reduced from 10
   },
   animatedText: {
     fontSize: RFValue(10.5),
+    fontFamily: 'Poppins-Bold',
   },
   animatedSubText: {
     fontSize: RFValue(7),
     lineHeight: 9,
+    fontFamily: 'Poppins-Bold',
   },
   exploreContainer: {
     justifyContent: 'center',
@@ -63,27 +66,30 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     resizeMode: 'contain',
   },
   lottie: {
-    width: '100%',
-    bottom: -1, // Adjust this value to position the animation
-    opacity: 0.6, // Add some transparency
+    width: '100%', // Use full container width
+
+    bottom: -1,
+
+    aspectRatio: 1,
   },
   rollingText: {
-    opacity: 0.6,
+    opacity: 0.5,
   },
   goldenCircle: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'cover',
+    width: 50,
+    position: 'absolute',
+    zIndex: -1,
+    alignSelf: 'center',
+    height: 50,
+    borderRadius: border.full,
   },
   profileAvatar: {
     width: 40,
     marginHorizontal: 5,
     height: 40,
-    borderRadius: 20,
+    borderRadius: border.full,
     justifyContent: 'center',
     alignItems: 'center',
-    overflow: 'hidden',
-    backgroundColor: '#fff',
   },
   vegMode: {
     width: '15%',
@@ -98,15 +104,13 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     bottom: 2,
   },
   lottieContainer: {
-    backgroundColor: '#E23744',
-    height: device.height * 0.5,
-    width: '100%',
+    backgroundColor: '#CC152D',
+    height: device.height * 0.54,
+    width: '100%', // Ensure full width
+    justifyContent: 'flex-end',
     position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    overflow: 'hidden',
-    zIndex: 1,
+    zIndex: -3,
+    alignSelf: 'center',
   },
   locationTextContainer: {
     flexDirection: 'column',
@@ -135,7 +139,8 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     backgroundColor: 'transparent',
   },
   padding: {
-    paddingHorizontal: 12, // Match headerContainer padding
+    paddingHorizontal: 12,
+    paddingVertical: 12,
   },
   searchBarWrapper: {
     paddingHorizontal: 16,
@@ -204,23 +209,51 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
   },
   leftTab: {
     backgroundColor: colors.background,
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
+    padding: 8,
+
+    borderColor: '#0f0f0f',
+    borderWidth: 2,
   },
   flexRowCenter: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     paddingHorizontal: 16,
   },
 
   rightTab: {
     backgroundColor: colors.background,
+    borderTopRightRadius: 12,
+    borderBottomRightRadius: 12,
+    padding: 8,
     flexDirection: 'row',
+    justifyContent: 'center',
     alignItems: 'center',
+    borderWidth: 2,
     gap: 4,
   },
 
   exploreSectionContainer: {
     backgroundColor: colors.background,
     paddingTop: 16,
+  },
+  searchInputContainer: {
+    backgroundColor: '#F3F4F7',
+    shadowOffset: {width: 1, height: 1},
+    shadowOpacity: 0.7,
+    elevation: 5,
+    shadowRadius: 6,
+    shadowColor: colors.background,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    borderRadius: 12,
+    width: '100%',
+    borderWidth: 0.6,
+    borderColor: colors.tertiary,
+    paddingHorizontal: 10,
+    paddingVertical: 10,
   },
 }));

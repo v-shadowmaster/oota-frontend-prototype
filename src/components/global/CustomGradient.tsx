@@ -3,10 +3,10 @@ import React, {FC} from 'react';
 import {LinearGradient} from 'react-native-linear-gradient';
 
 const darkColors = [
-  `rgba(0,0,0,0.9)`,
-  `rgba(0,0,0,0.6)`,
   `rgba(0,0,0,0.1)`,
-  `rgba(0,0,0,0.0)`,
+  `rgba(0,0,0,0.6)`,
+  `rgba(0,0,0,0.8)`,
+  `rgba(0,0,0,0.9)`,
 ];
 
 const lightColors = [
@@ -26,9 +26,7 @@ const CustomGradient: FC<CustomGradientProps> = ({
   mode = 'dark',
   style,
 }) => {
-  const bottomColors = [
-    ...(mode == 'dark' ? darkColors : lightColors).reverse(),
-  ];
+  const bottomColors = [...(mode == 'dark' ? darkColors : lightColors)];
 
   const gradientStyle: ViewStyle = {
     position: 'absolute',

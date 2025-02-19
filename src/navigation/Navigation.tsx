@@ -5,12 +5,14 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {navigationRef} from '@utils/NavigationUtils';
 import {FC} from 'react';
+import {StatusBar} from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
 const Navigation: FC = () => {
   return (
     <NavigationContainer ref={navigationRef}>
+      <StatusBar translucent />
       <Stack.Navigator
         initialRouteName="SplashScreen"
         screenOptions={{
