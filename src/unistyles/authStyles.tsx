@@ -66,7 +66,7 @@ export const loginStyles = createStyleSheet(({colors, device, border}) => ({
     width: '100%',
     position: 'absolute',
     backgroundColor: colors.border,
-    zIndex: -1,
+    zIndex: 1,
   },
   breakerText: {
     opacity: 0.8,

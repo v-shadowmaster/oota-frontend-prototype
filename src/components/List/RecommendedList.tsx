@@ -101,15 +101,16 @@ const RecommendedList = () => {
   return (
     <ScrollView
       horizontal
-      showsHorizontalScrollIndicator={true}
+      showsHorizontalScrollIndicator={false}
       style={{marginTop: 16}}>
       <FlatList
+        horizontal
         data={recommenedListData}
         renderItem={renderItem}
         keyExtractor={item => item.id.toString()}
-        horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.listContainer}
+        style={styles.recommendedContainer}
       />
     </ScrollView>
   );

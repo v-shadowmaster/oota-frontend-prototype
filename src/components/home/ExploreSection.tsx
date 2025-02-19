@@ -6,6 +6,8 @@ import CustomText from '@components/global/CustomText';
 import {Colors} from '@unistyles/Constants';
 import Icon from '@components/ui/Icon';
 import RecommendedList from '@components/List/RecommendedList';
+import BreakerText from '@components/ui/BreakerText';
+import RegularFoodList from '@components/List/RegularFoodList';
 
 const ExploreSection = () => {
   const [tabSelected, settabSelected] = useState(1);
@@ -47,10 +49,29 @@ const ExploreSection = () => {
       </View>
 
       <RecommendedList />
+
+      <CustomText
+        style={{
+          fontFamily: 'Poppins-Bold',
+          paddingHorizontal: 20,
+          marginTop: 10,
+        }}
+        color={Colors.text}
+        fontSize={18}>{`What's on your mind`}</CustomText>
+
+      <RegularFoodList />
+
+      <CustomText
+        style={{
+          fontFamily: 'Poppins-Bold',
+          paddingHorizontal: 20,
+          marginTop: 10,
+        }}
+        color={Colors.text}
+        fontSize={18}>{`All Restaurants`}</CustomText>
+
       <RecommendedList />
-      <RecommendedList />
-      <RecommendedList />
-      <RecommendedList />
+
       <RecommendedList />
     </View>
   );

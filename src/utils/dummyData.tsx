@@ -72,3 +72,62 @@ export const recommenedListData = [
     isBookmarked: false,
   },
 ];
+
+export const regularFoodData = [
+  {
+    id: 1,
+    name: 'Biryani',
+    imageUrl: require('@assets/images/regular-food/biryani.jpg'),
+  },
+  {
+    id: 2,
+    name: 'Burger',
+    imageUrl: require('@assets/images/regular-food/burger.jpg'),
+  },
+  {
+    id: 3,
+    name: 'Cake',
+    imageUrl: require('@assets/images/regular-food/cake.jpeg'),
+  },
+  {
+    id: 4,
+    name: 'Chicken',
+    imageUrl: require('@assets/images/regular-food/chicken.jpg'),
+  },
+  {
+    id: 5,
+    name: 'Dosa',
+    imageUrl: require('@assets/images/regular-food/dosa.jpg'),
+  },
+  {
+    id: 6,
+    name: 'Momos',
+    imageUrl: require('@assets/images/regular-food/momos.jpg'),
+  },
+  {
+    id: 7,
+    name: 'North Indian',
+    imageUrl: require('@assets/images/regular-food/north_indian.jpg'),
+  },
+  {
+    id: 8,
+    name: 'Paneer',
+    imageUrl: require('@assets/images/regular-food/paneer.jpg'),
+  },
+  {
+    id: 9,
+    name: 'Pizza',
+    imageUrl: require('@assets/images/regular-food/pizza.jpg'),
+  },
+  {
+    id: 10,
+    name: 'Rolls',
+    imageUrl: require('@assets/images/regular-food/rolls.jpg'),
+  },
+
+  {
+    id: 11,
+    name: 'Thali',
+    imageUrl: require('@assets/images/regular-food/thali.jpg'),
+  },
+];

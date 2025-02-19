@@ -7,3 +7,4 @@ declare module '*.webp';
 declare module '*.bmp';
 declare module '*.ico';
 declare module '*.tiff';
+declare module '*.avif';
