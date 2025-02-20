@@ -1,11 +1,11 @@
 import {View, Text, FlatList} from 'react-native';
 import React from 'react';
 import CustomText from '@components/global/CustomText';
-import RecommendedList from './RecommendedList';
 import {recommenedListData} from '@utils/dummyData';
 import {useStyles} from 'react-native-unistyles';
 import {cardStyles} from '@unistyles/cardStyles';
 import RestaurantCard from './RestaurantCard';
+import HorizontalLine from '@components/ui/HorizontalLine';
 
 const RestaurantLIst = () => {
   const {styles} = useStyles(cardStyles);
@@ -21,6 +21,7 @@ const RestaurantLIst = () => {
         fontSize={14}>
         1823 restaurants deliverying to you
       </CustomText>
+      <HorizontalLine />
 
       <FlatList
         data={recommenedListData}
@@ -31,9 +32,6 @@ const RestaurantLIst = () => {
         keyExtractor={item => item?.id.toString()}
         contentContainerStyle={styles.listContainer}
       />
-
-      <RecommendedList />
-      <RecommendedList />
     </View>
   );
 };

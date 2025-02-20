@@ -6,6 +6,7 @@ import {useSharedState} from '@features/tabs/SharedContext';
 import Animated, {interpolate, useAnimatedStyle} from 'react-native-reanimated';
 import Icon from '@components/ui/Icon';
 import CustomText from '@components/global/CustomText';
+import {Colors} from '@unistyles/Constants';
 
 const LocationHeader = () => {
   const {scrollYGlobal} = useSharedState();
@@ -20,13 +21,14 @@ const LocationHeader = () => {
   });
 
   return (
-    <Animated.View style={[opacityFadingStyles, {paddingTop: 10}]}>
+    <Animated.View
+      style={[opacityFadingStyles, {paddingTop: 10, marginTop: 10}]}>
       <SafeAreaView />
       <View style={styles.flexRowBetween}>
         <View style={styles.flexRowGap}>
           <Icon
             name="map-marker"
-            color={textColor}
+            color={Colors.secondary}
             iconFamily="MaterialCommunityIcons"
             size={32}
           />
@@ -35,21 +37,21 @@ const LocationHeader = () => {
             <TouchableOpacity style={styles.flexRow}>
               <CustomText
                 variant="h5"
-                color={textColor}
+                color={Colors.secondary}
                 fontFamily="Poppins-Bold"
                 style={{fontFamily: 'Poppins-Bold'}}>
                 #43 Kammasandra
               </CustomText>
               <Icon
                 name="chevron-down"
-                color={textColor}
+                color={Colors.secondary}
                 iconFamily="MaterialCommunityIcons"
                 size={18}
               />
             </TouchableOpacity>
 
             <CustomText
-              color={textColor}
+              color={Colors.secondary}
               fontFamily="Poppins-Medium"
               style={{fontFamily: 'Poppins-Medium'}}>
               Bengaluru , Karnakaka

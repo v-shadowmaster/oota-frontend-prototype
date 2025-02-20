@@ -6,9 +6,7 @@ import CustomText from '@components/global/CustomText';
 import {Colors} from '@unistyles/Constants';
 import Icon from '@components/ui/Icon';
 import RecommendedList from '@components/List/RecommendedList';
-import BreakerText from '@components/ui/BreakerText';
 import RegularFoodList from '@components/List/RegularFoodList';
-import HorizontalLine from '@components/ui/HorizontalLine';
 
 const ExploreSection = () => {
   const [tabSelected, settabSelected] = useState(1);

@@ -50,7 +50,7 @@ const SearchBar: FC = () => {
   return (
     <>
       <SafeAreaView />
-      <View style={{paddingTop: 16, paddingBottom: 16}}>
+      <View style={{marginTop: 14, marginBottom: 14}}>
         <TouchableOpacity style={[styles.searchInputContainer]}>
           <>
             <Icon

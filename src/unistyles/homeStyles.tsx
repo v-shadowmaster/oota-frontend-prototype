@@ -9,14 +9,15 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     backgroundColor: colors.background,
   },
   topHidingContainer: {
-    marginTop: isBannerHeight,
+    // marginTop: isBannerHeight,
 
     backgroundColor: colors.background,
   },
   topHeader: {
     zIndex: 1,
     alignSelf: 'center',
-    paddingHorizontal: 10, // Reduced from 10
+    paddingHorizontal: 10,
+    marginTop: 0, // Reduced from 10
   },
   animatedText: {
     fontSize: RFValue(10.5),

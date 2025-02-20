@@ -13,6 +13,8 @@ import {useSharedState} from '@features/tabs/SharedContext';
 import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
 import {RestaurantStyles} from '@unistyles/restaurantStyles';
 import BackToTopButton from '@components/ui/BackToTopButton';
+import {filtersOption} from '@utils/dummyData';
+import SortingAndFilters from '@components/home/SortingAndFilters';
 
 const sectionedData = [
   {title: 'Explore', data: [{}], renderItem: () => <ExploreSection />},
@@ -107,6 +109,20 @@ const MainList: FC = () => {
         onScroll={handleScroll}
         ref={sectionListRef}
         scrollEventThrottle={16}
+        renderSectionHeader={({section}) => {
+          if (section.title !== 'Restaurant') {
+            return null;
+          }
+          return (
+            <Animated.View
+              style={[
+                isRestaurantVisible || isNearEnd ? styles.shadowBottom : null,
+                styles.centerDesign,
+              ]}>
+              <SortingAndFilters menuTitle="sort" options={filtersOption} />
+            </Animated.View>
+          );
+        }}
         bounces={false}
         nestedScrollEnabled
         showsVerticalScrollIndicator={false}
