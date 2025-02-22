@@ -10,6 +10,7 @@ import {
 import React, {memo, useState, useRef} from 'react';
 import CustomText from '@components/global/CustomText';
 import Icon from '@components/ui/Icon';
+import AddButton from './AddButton';
 
 // Modern VegIndicator with animation
 const IsVegComponent: React.FC<{isVeg: boolean}> = ({isVeg}) => {
@@ -39,99 +40,6 @@ const IsVegComponent: React.FC<{isVeg: boolean}> = ({isVeg}) => {
         size={8}
         color="#FFFFFF"
       />
-    </Animated.View>
-  );
-};
-
-// Enhanced Add Button with micro-animations
-const AddButton: React.FC<{item: any; restaurant: any}> = ({item}) => {
-  const [quantity, setQuantity] = useState(0);
-  const buttonScale = useRef(new Animated.Value(1)).current;
-  const textOpacity = useRef(new Animated.Value(1)).current;
-
-  const animatePress = () => {
-    Animated.sequence([
-      Animated.parallel([
-        Animated.timing(buttonScale, {
-          toValue: 0.95,
-          duration: 100,
-          useNativeDriver: true,
-        }),
-        Animated.timing(textOpacity, {
-          toValue: 0.7,
-          duration: 100,
-          useNativeDriver: true,
-        }),
-      ]),
-      Animated.parallel([
-        Animated.spring(buttonScale, {
-          toValue: 1,
-          tension: 20,
-          friction: 4,
-          useNativeDriver: true,
-        }),
-        Animated.timing(textOpacity, {
-          toValue: 1,
-          duration: 100,
-          useNativeDriver: true,
-        }),
-      ]),
-    ]).start();
-  };
-
-  return (
-    <Animated.View
-      style={[styles.addButtonWrapper, {transform: [{scale: buttonScale}]}]}>
-      {quantity === 0 ? (
-        <Pressable
-          style={styles.addButton}
-          onPress={() => {
-            animatePress();
-            setQuantity(1);
-          }}>
-          <Animated.View style={{opacity: textOpacity}}>
-            <CustomText
-              fontFamily="Montserrat-Bold"
-              fontSize={14}
-              color="#FFFFFF"
-              style={{fontFamily: 'Montserrat-Bold'}}>
-              ADD
-            </CustomText>
-          </Animated.View>
-        </Pressable>
-      ) : (
-        <View style={styles.quantityControls}>
-          <Pressable
-            onPress={() => {
-              animatePress();
-              setQuantity(prev => Math.max(0, prev - 1));
-            }}
-            style={styles.quantityButton}>
-            <Icon
-              name="remove"
-              iconFamily="MaterialIcons"
-              size={18}
-              color="#FFFFFF"
-            />
-          </Pressable>
-          <Animated.Text style={[styles.quantityText, {opacity: textOpacity}]}>
-            {quantity}
-          </Animated.Text>
-          <Pressable
-            onPress={() => {
-              animatePress();
-              setQuantity(prev => prev + 1);
-            }}
-            style={styles.quantityButton}>
-            <Icon
-              name="add"
-              iconFamily="MaterialIcons"
-              size={18}
-              color="#FFFFFF"
-            />
-          </Pressable>
-        </View>
-      )}
     </Animated.View>
   );
 };
@@ -189,11 +97,11 @@ const FoodCard: React.FC<{item: any; restaurant: any}> = ({
               <Icon
                 name="currency-inr"
                 iconFamily="MaterialCommunityIcons"
-                size={16}
+                size={14}
                 color="#0F172A"
               />
               <CustomText
-                fontSize={15}
+                fontSize={12}
                 fontFamily="Poppins-Medium"
                 style={styles.price}>
                 {item?.price}
@@ -202,21 +110,22 @@ const FoodCard: React.FC<{item: any; restaurant: any}> = ({
 
             <View style={styles.featuresSection}>
               {item?.isCustomizable && (
-                <View style={styles.customizableBadge}>
+                <View style={styles.customizableTag}>
                   <Icon
-                    name="tune"
+                    name="edit"
                     iconFamily="MaterialIcons"
-                    size={14}
-                    color="#6366F1"
+                    size={12}
+                    color="#4338CA"
                   />
                   <CustomText
-                    fontSize={12}
+                    fontSize={11}
                     fontFamily="Poppins-Medium"
                     style={styles.customizableText}>
-                    Customizable
+                    Customize
                   </CustomText>
                 </View>
               )}
+
               <Animated.View style={{transform: [{scale: bookmarkScale}]}}>
                 <TouchableOpacity
                   style={styles.bookmarkButton}
@@ -292,6 +201,7 @@ const styles = StyleSheet.create({
   priceSection: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#F1F5F9',
     paddingHorizontal: 8,
     paddingVertical: 4,
@@ -345,39 +255,16 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     elevation: 2,
   },
-  addButtonWrapper: {
-    position: 'absolute',
-    bottom: -8,
-    left: 0,
-    right: 0,
-    alignItems: 'center',
-  },
-  addButton: {
-    backgroundColor: '#0F172A',
-    paddingVertical: 8,
-    paddingHorizontal: 24,
-    borderRadius: 20,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 2},
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  quantityControls: {
+
+  customizableTag: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#0F172A',
-    borderRadius: 20,
+    backgroundColor: '#EEF2FF',
     paddingHorizontal: 8,
-  },
-  quantityButton: {
-    padding: 8,
-  },
-  quantityText: {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 15,
-    color: '#FFFFFF',
-    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderRadius: 6,
+    gap: 4,
+    borderWidth: 1,
+    borderColor: '#E0E7FF',
   },
 });

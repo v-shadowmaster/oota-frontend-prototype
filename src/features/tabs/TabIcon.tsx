@@ -1,9 +1,14 @@
 import CustomText from '@components/global/CustomText';
 import Icon from '@components/ui/Icon';
-import {Colors} from '@unistyles/Constants';
 import {FC, memo} from 'react';
-import {TextStyle, View, ViewStyle} from 'react-native';
-import {RFValue} from 'react-native-responsive-fontsize';
+import {View} from 'react-native';
+import Animated, {
+  useAnimatedStyle,
+  withSpring,
+  withTiming,
+  withSequence,
+  withDelay,
+} from 'react-native-reanimated';
 
 interface TabProps {
   name: string;
@@ -13,92 +18,127 @@ interface IconProp {
   focused: boolean;
 }
 
-const styles = {
-  width: RFValue(18),
-  height: RFValue(18),
+// X-inspired dark color scheme
+const colors = {
+  active: '#0F1419', // X Black for active state
+  inactive: '#536471', // X Gray for inactive
 };
 
-const tabStyles: ViewStyle = {
-  justifyContent: 'center',
-  alignItems: 'center',
-  paddingHorizontal: 8,
-};
+const TabIcon: FC<TabProps & {focused: boolean}> = memo(({name, focused}) => {
+  const iconAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [
+        {
+          scale: withSequence(
+            withSpring(focused ? 1.2 : 1, {
+              damping: 12,
+              stiffness: 120,
+            }),
+            withDelay(
+              100,
+              withSpring(focused ? 1 : 1, {
+                damping: 10,
+                stiffness: 100,
+              }),
+            ),
+          ),
+        },
+        {
+          translateY: withSpring(focused ? -2 : 0, {
+            damping: 10,
+            stiffness: 100,
+          }),
+        },
+      ],
+    };
+  });
 
-const textStyleInActive: TextStyle = {
-  textAlign: 'center',
-  marginTop: 4,
-  color: Colors.lightText,
-  fontSize: RFValue(9.5),
-};
+  const textAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [
+        {
+          translateY: withSpring(focused ? -1 : 0, {
+            damping: 10,
+            stiffness: 100,
+          }),
+        },
+      ],
+      opacity: withTiming(focused ? 1 : 0.8, {
+        duration: 200,
+      }),
+    };
+  });
 
-const textStyleActive: TextStyle = {
-  textAlign: 'center',
-  marginTop: 4,
-  color: Colors.active,
-};
+  const getIconName = () => {
+    switch (name) {
+      case 'Delivery':
+        return {
+          active: 'truck-delivery',
+          inactive: 'truck-delivery-outline',
+        };
+      case 'Reorder':
+        return {
+          active: 'clock-time-four',
+          inactive: 'clock-time-four-outline',
+        };
+      case 'Profile':
+        return {
+          active: 'account',
+          inactive: 'account-outline',
+        };
+      default:
+        return {
+          active: 'home',
+          inactive: 'home-outline',
+        };
+    }
+  };
 
-const TabIcon: FC<TabProps> = memo(({name}) => {
+  const icons = getIconName();
+
   return (
-    <View style={tabStyles}>
-      <Icon
-        iconFamily="MaterialCommunityIcons"
-        name={
-          name === 'Delivery'
-            ? 'truck-delivery-outline'
-            : name === 'Reorder'
-            ? 'refresh'
-            : 'face-man-profile'
-        }
-        size={22}
-        color="#000000"
-      />
-      <CustomText style={[{fontFamily: 'Poppins-Bold'}]}>{name}</CustomText>
+    <View
+      style={{
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 2,
+      }}>
+      <Animated.View style={iconAnimatedStyle}>
+        <Icon
+          iconFamily="MaterialCommunityIcons"
+          name={focused ? icons.active : icons.inactive} 
+          size={26}
+          color={focused ? colors.active : colors.inactive}
+        />
+      </Animated.View>
+      <Animated.View style={textAnimatedStyle}>
+        <CustomText
+          style={{
+            fontSize: 13,
+            color: focused ? colors.active : colors.inactive,
+            fontFamily: focused ? 'Poppins-Bold' : 'Poppins-Medium',
+          }}>
+          {name}
+        </CustomText>
+      </Animated.View>
     </View>
   );
 });
 
-const TabIconFocused: FC<TabProps> = memo(({name}) => {
-  return (
-    <View style={tabStyles}>
-      <Icon
-        iconFamily="MaterialCommunityIcons"
-        name={
-          name === 'Delivery'
-            ? 'truck-delivery'
-            : name === 'Reorder'
-            ? 'refresh'
-            : 'face-man-profile'
-        }
-        size={22}
-        color={Colors.active}
-      />
-      <CustomText style={[textStyleActive, {fontFamily: 'Poppins-Bold'}]}>
-        {name}
-      </CustomText>
-    </View>
-  );
-});
+export const DeliveryTabIcon: FC<IconProp> = memo(({focused}) => (
+  <TabIcon name="Delivery" focused={focused} />
+));
 
-export const DeliveryTabIcon: FC<IconProp> = ({focused}) => {
-  return focused ? (
-    <TabIconFocused name="Delivery" />
-  ) : (
-    <TabIcon name="Delivery" />
-  );
-};
+export const ReorderTabIcon: FC<IconProp> = memo(({focused}) => (
+  <TabIcon name="Reorder" focused={focused} />
+));
 
-export const ReorderTabIcon: FC<IconProp> = ({focused}) => {
-  return focused ? (
-    <TabIconFocused name="Reorder" />
-  ) : (
-    <TabIcon name="Reorder" />
-  );
-};
+export const ProfileTabIcon: FC<IconProp> = memo(({focused}) => (
+  <TabIcon name="Profile" focused={focused} />
+));
 
-export const ProfileTabIcon: FC<IconProp> = ({focused}) => {
-  return focused ? (
-    <TabIconFocused name="Profile" />
-  ) : (
-    <TabIcon name="Profile" />
-  );
+export default {
+  DeliveryTabIcon,
+  ReorderTabIcon,
+  ProfileTabIcon,
 };

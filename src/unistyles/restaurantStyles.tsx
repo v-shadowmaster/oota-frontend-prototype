@@ -4,7 +4,7 @@ export const RestaurantStyles = createStyleSheet(
   ({colors, device, border}) => ({
     listContainer: {},
     backToTopButton: {
-      top: 100,
+      top: 140,
       position: 'absolute',
       zIndex: 1000,
       width: '100%',

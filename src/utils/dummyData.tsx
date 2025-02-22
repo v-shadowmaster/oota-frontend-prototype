@@ -159,7 +159,7 @@ export const restaurantItemData = [
     isVeg: true,
     isCustomizable: false,
     quantity: 3,
-    customization: [],
+    customizationOptions: [],
   },
   {
     id: '2',
@@ -170,7 +170,7 @@ export const restaurantItemData = [
     isVeg: true,
     isCustomizable: false,
     quantity: 3,
-    customization: [],
+    customizationOptions: [],
   },
   {
     id: '3',
@@ -181,7 +181,7 @@ export const restaurantItemData = [
     isVeg: false,
     isCustomizable: false,
     quantity: 3,
-    customization: [],
+    customizationOptions: [],
   },
   {
     id: '4',
@@ -192,21 +192,25 @@ export const restaurantItemData = [
     isVeg: false,
     isCustomizable: true,
     quantity: 3,
-    customization: [
+    customizationOptions: [
       {
         id: 'c1',
         quantity: 1,
         price: 20,
-        customizationOptions: [
-          {type: 'Cheese', selectedOption: 'Extra Cheese'},
-          {type: 'Sauce', selectedOption: 'Spicy Mayo'},
+        type: 'Extra Cheese',
+        required: false,
+        options: [
+          {name: 'Extra Cheese', price: 20},
+          {name: 'Spicy Mayo', price: 20},
         ],
       },
       {
         id: 'c2',
         quantity: 1,
         price: 30,
-        customizationOptions: [{type: 'Bun', selectedOption: 'Whole Grain'}],
+        type: 'Whole Grain',
+        required: false,
+        options: [{name: 'Whole Grain', price: 30}],
       },
     ],
   },
@@ -219,7 +223,7 @@ export const restaurantItemData = [
     isVeg: true,
     isCustomizable: false,
     quantity: 3,
-    customization: [],
+    customizationOptions: [],
   },
   {
     id: '6',
@@ -230,15 +234,23 @@ export const restaurantItemData = [
     isVeg: true,
     isCustomizable: true,
     quantity: 3,
-    customization: [
+    // The original group has two options with different types. They are split into two groups.
+    customizationOptions: [
       {
-        id: 'c3',
+        id: 'c3_1',
         quantity: 1,
         price: 15,
-        customizationOptions: [
-          {type: 'Sauce', selectedOption: 'Pesto'},
-          {type: 'Cheese', selectedOption: 'Parmesan'},
-        ],
+        type: 'Sauce',
+        required: false,
+        options: [{name: 'Pesto', price: 15}],
+      },
+      {
+        id: 'c3_2',
+        quantity: 1,
+        price: 15,
+        type: 'Cheese',
+        required: false,
+        options: [{name: 'Parmesan', price: 15}],
       },
     ],
   },
@@ -251,7 +263,7 @@ export const restaurantItemData = [
     isVeg: true,
     isCustomizable: false,
     quantity: 3,
-    customization: [],
+    customizationOptions: [],
   },
   {
     id: '8',
@@ -262,15 +274,23 @@ export const restaurantItemData = [
     isVeg: true,
     isCustomizable: true,
     quantity: 3,
-    customization: [
+    // Splitting the single customization group into two based on different option types.
+    customizationOptions: [
       {
-        id: 'c4',
+        id: 'c4_1',
         quantity: 1,
         price: 10,
-        customizationOptions: [
-          {type: 'Bread', selectedOption: 'Multigrain'},
-          {type: 'Filling', selectedOption: 'Extra Veggies'},
-        ],
+        type: 'Bread',
+        required: false,
+        options: [{name: 'Multigrain', price: 10}],
+      },
+      {
+        id: 'c4_2',
+        quantity: 1,
+        price: 10,
+        type: 'Filling',
+        required: true,
+        options: [{name: 'Extra Veggies', price: 10}],
       },
     ],
   },
@@ -283,7 +303,7 @@ export const restaurantItemData = [
     isVeg: true,
     isCustomizable: false,
     quantity: 3,
-    customization: [],
+    customizationOptions: [],
   },
   {
     id: '10',
@@ -294,15 +314,22 @@ export const restaurantItemData = [
     isVeg: true,
     isCustomizable: true,
     quantity: 3,
-    customization: [
+    customizationOptions: [
       {
-        id: 'c5',
+        id: 'c5_1',
         quantity: 1,
         price: 25,
-        customizationOptions: [
-          {type: 'Dressing', selectedOption: 'Olive Oil'},
-          {type: 'Toppings', selectedOption: 'Nuts'},
-        ],
+        type: 'Dressing',
+        required: false,
+        options: [{name: 'Olive Oil', price: 25}],
+      },
+      {
+        id: 'c5_2',
+        quantity: 1,
+        price: 25,
+        type: 'Toppings',
+        required: false,
+        options: [{name: 'Nuts', price: 25}],
       },
     ],
   },
@@ -315,7 +342,7 @@ export const restaurantItemData = [
     isVeg: false,
     isCustomizable: false,
     quantity: 3,
-    customization: [],
+    customizationOptions: [],
   },
   {
     id: '12',
@@ -326,15 +353,22 @@ export const restaurantItemData = [
     isVeg: true,
     isCustomizable: true,
     quantity: 3,
-    customization: [
+    customizationOptions: [
       {
-        id: 'c6',
+        id: 'c6_1',
         quantity: 1,
         price: 20,
-        customizationOptions: [
-          {type: 'Wrap Type', selectedOption: 'Whole Wheat'},
-          {type: 'Sauce', selectedOption: 'Garlic Mayo'},
-        ],
+        type: 'Wrap Type',
+        required: false,
+        options: [{name: 'Whole Wheat', price: 20}],
+      },
+      {
+        id: 'c6_2',
+        quantity: 1,
+        price: 20,
+        type: 'Sauce',
+        required: false,
+        options: [{name: 'Garlic Mayo', price: 20}],
       },
     ],
   },
@@ -347,7 +381,7 @@ export const restaurantItemData = [
     isVeg: true,
     isCustomizable: false,
     quantity: 3,
-    customization: [],
+    customizationOptions: [],
   },
   {
     id: '14',
@@ -358,15 +392,22 @@ export const restaurantItemData = [
     isVeg: false,
     isCustomizable: true,
     quantity: 3,
-    customization: [
+    customizationOptions: [
       {
-        id: 'c7',
+        id: 'c7_1',
         quantity: 1,
         price: 20,
-        customizationOptions: [
-          {type: 'Protein', selectedOption: 'Chicken'},
-          {type: 'Spice Level', selectedOption: 'Medium'},
-        ],
+        type: 'Protein',
+        required: false,
+        options: [{name: 'Chicken', price: 20}],
+      },
+      {
+        id: 'c7_2',
+        quantity: 1,
+        price: 20,
+        type: 'Spice Level',
+        required: false,
+        options: [{name: 'Medium', price: 20}],
       },
     ],
   },
@@ -379,6 +420,6 @@ export const restaurantItemData = [
     isVeg: true,
     isCustomizable: false,
     quantity: 3,
-    customization: [],
+    customizationOptions: [],
   },
 ];

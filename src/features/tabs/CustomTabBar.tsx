@@ -17,16 +17,18 @@ const CustomTabBar: FC<BottomTabBarProps> = props => {
   const bottom = useSafeAreaInsets();
   const {styles} = useStyles();
 
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [
-      {
-        translateY:
-          scrollY.value === 1
-            ? withTiming(100, {duration: 300})
-            : withTiming(0, {duration: 300}),
-      },
-    ],
-  }));
+  const animatedStyle = useAnimatedStyle(() => {
+    const translateY = scrollY.value === 1 ? 100 : 0;
+    return {
+      transform: [{translateY: withTiming(translateY, {duration: 300})}],
+      // Add height and position properties
+      height: withTiming(translateY === 0 ? 'auto' : 0, {duration: 300}),
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      right: 0,
+    };
+  });
 
   const indicatorStyle = useAnimatedStyle(() => {
     const baseLeft = 10;

@@ -10,7 +10,7 @@ const SplashScreen = () => {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      resetAndNavigate('LoginScreen');
+      resetAndNavigate('UserBottomTab');
     }, 3000);
 
     return () => clearTimeout(timeoutId);
