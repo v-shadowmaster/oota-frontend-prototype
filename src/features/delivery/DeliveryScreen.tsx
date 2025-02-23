@@ -53,9 +53,9 @@ const DeliveryScreen: FC = () => {
       <StatusBar translucent barStyle="dark-content" backgroundColor="#fff" />
 
       <Animated.View style={[moveUpStyle]}>
-        {/* <Animated.View style={[moveUpStyleNotExtrapolate]}>
+        <Animated.View style={[moveUpStyleNotExtrapolate]}>
           <Graphics />
-        </Animated.View> */}
+        </Animated.View>
 
         <Animated.View style={[backgroundColorChanges, styles.topHeader]}>
           <HeaderSection />

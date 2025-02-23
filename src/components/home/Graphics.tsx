@@ -33,7 +33,7 @@ const Graphics = () => {
       pointerEvents="none">
       <LottieView
         style={styles.lottie}
-        source={require('@assets/animations/chris.json')}
+        source={require('@assets/animations/val.json')}
         autoPlay
         loop
         renderMode="HARDWARE"

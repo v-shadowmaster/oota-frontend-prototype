@@ -26,8 +26,11 @@ const RepeatItemModal: React.FC<{
     <View>
       <View style={styles.noShadowHeaderContainer}>
         <View style={styles.flexRowGap}>
-          <CustomText fontFamily="Poppins-Bold" fontSize={13}>
-            Repeat last used customization?
+          <CustomText
+            fontFamily="Poppins-Bold"
+            fontSize={18}
+            style={{fontFamily: 'Poppins-Bold'}}>
+            Repeat last used customization ?
           </CustomText>
         </View>
       </View>
@@ -50,7 +53,8 @@ const RepeatItemModal: React.FC<{
           <CustomText
             fontFamily="Poppins-Bold"
             color={Colors.active}
-            fontSize={12}>
+            fontSize={16}
+            style={{fontFamily: 'Poppins-Bold', paddingVertical: 24}}>
             + Add new customization
           </CustomText>
         </TouchableOpacity>
@@ -62,7 +66,12 @@ const RepeatItemModal: React.FC<{
 export default RepeatItemModal;
 
 const styles = StyleSheet.create({
-  noShadowHeaderContainer: {},
-  flexRowGap: {},
+  noShadowHeaderContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  flexRowGap: {
+    padding: 20,
+  },
   ShadowContainerWhiteBackground: {},
 });

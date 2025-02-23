@@ -30,7 +30,7 @@ export default BackToTopButton;
 const {width} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
-  //#111827
+  // #111827
   button: {
     backgroundColor: '#111827', // Dark background like Twitter's
     borderRadius: 9999, // Fully rounded

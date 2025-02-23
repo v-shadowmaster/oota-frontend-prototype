@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useCallback, useRef} from 'react';
 import {Pressable, StyleSheet, View, Animated} from 'react-native';
 import {useAppDispatch, useAppSelector} from '@states/reduxHook';
 import Icon from '@components/ui/Icon';
@@ -17,6 +17,7 @@ const AddButton: React.FC<{item: any; restaurant: any}> = ({
   restaurant,
 }) => {
   const dispatch = useAppDispatch();
+  // Use the selector without custom equality – this will always return the latest state.
   const cart = useAppSelector(
     selectRestaurantCartItem(restaurant?.id, item?.id),
   );
@@ -47,20 +48,12 @@ const AddButton: React.FC<{item: any; restaurant: any}> = ({
     );
   };
 
-  // Local quantity state and animation values
-  const [quantity, setQuantity] = useState(0);
+  // Derive the quantity directly from the store.
+  const quantity = cart?.quantity || 0;
+
+  // Animation values.
   const buttonScale = useRef(new Animated.Value(1)).current;
   const textOpacity = useRef(new Animated.Value(1)).current;
-
-  // Sync local quantity with the cart.
-  useEffect(() => {
-    if (cart) {
-      // Assuming cart.quantity is available; fallback to 1 if not.
-      setQuantity(cart.quantity || 1);
-    } else {
-      setQuantity(0);
-    }
-  }, [cart]);
 
   const animatePress = () => {
     Animated.sequence([
@@ -135,10 +128,6 @@ const AddButton: React.FC<{item: any; restaurant: any}> = ({
             onPress={() => {
               addCartHandler();
               animatePress();
-              // For non-customizable items, update immediately.
-              if (!item?.isCustomizable) {
-                setQuantity(1);
-              }
             }}>
             <Animated.View style={{opacity: textOpacity}}>
               <CustomText
@@ -156,9 +145,6 @@ const AddButton: React.FC<{item: any; restaurant: any}> = ({
               onPress={() => {
                 removeCartHandler();
                 animatePress();
-                if (!item?.isCustomizable) {
-                  setQuantity(prev => Math.max(0, prev - 1));
-                }
               }}
               style={styles.quantityButton}>
               <Icon
@@ -176,9 +162,6 @@ const AddButton: React.FC<{item: any; restaurant: any}> = ({
               onPress={() => {
                 addCartHandler();
                 animatePress();
-                if (!item?.isCustomizable) {
-                  setQuantity(prev => prev + 1);
-                }
               }}
               style={styles.quantityButton}>
               <Icon
@@ -195,7 +178,7 @@ const AddButton: React.FC<{item: any; restaurant: any}> = ({
   );
 };
 
-export default React.memo(AddButton);
+export default AddButton;
 
 const styles = StyleSheet.create({
   addButtonWrapper: {
