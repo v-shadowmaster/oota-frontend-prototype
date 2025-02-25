@@ -1,6 +1,7 @@
 // cartSlice.tsx
 import {createSelector, createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {RootState} from '@states/store';
+import {v4 as uuid} from 'uuid';
 
 interface CartItem {
   isVeg: boolean;
