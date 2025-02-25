@@ -22,6 +22,12 @@ const RepeatItemModal: React.FC<{
     selectRestaurantCartItem(restaurant?.id, item?.id),
   );
 
+  React.useEffect(() => {
+    if (!cartItem) {
+      closeModal();
+    }
+  }, [cartItem]);
+
   return (
     <View>
       <View style={styles.noShadowHeaderContainer}>

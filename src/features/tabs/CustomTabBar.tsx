@@ -9,6 +9,7 @@ import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
 import {Colors, screenHeight, screenWidth} from '@unistyles/Constants';
 import ScalePress from '@components/ui/ScalePress';
 import {DeliveryTabIcon, ProfileTabIcon, ReorderTabIcon} from './TabIcon';
+import CartHOC from '@features/checkout/CartHOC';
 
 const CustomTabBar: FC<BottomTabBarProps> = props => {
   const isVegMode = useAppSelector(state => state.user.isVegMode);
@@ -39,73 +40,76 @@ const CustomTabBar: FC<BottomTabBarProps> = props => {
   });
 
   return (
-    <Animated.View
-      style={[
-        animatedStyle,
-        {
-          paddingBottom: bottom.bottom,
-          backgroundColor: Colors.background,
-          borderTopWidth: 1,
-          borderTopColor: Colors.border,
-        },
-      ]}>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          alignItems: 'center',
-          paddingVertical: 10,
-        }}>
-        {state?.routes?.map((route, index) => {
-          const isFocused = state.index == index;
-          const onPress = () => {
-            const event = navigation.emit({
-              type: 'tabPress',
-              target: route?.key,
-              canPreventDefault: true,
-            });
-
-            if (!isFocused && !event.defaultPrevented) {
-              navigation.navigate(route?.name);
-            }
-          };
-
-          const onLongPress = () => {
-            navigation.emit({
-              type: 'tabLongPress',
-              target: route.key,
-            });
-          };
-
-          return (
-            <ScalePress
-              onPress={onPress}
-              onLongPress={onLongPress}
-              key={index}
-              style={{
-                flex: 1,
-                alignItems: 'center',
-              }}>
-              {route?.name == 'Delivery' && (
-                <DeliveryTabIcon focused={isFocused} />
-              )}
-              {route?.name == 'Reorder' && (
-                <ReorderTabIcon focused={isFocused} />
-              )}
-              {route?.name == 'Profile' && (
-                <ProfileTabIcon focused={isFocused} />
-              )}
-            </ScalePress>
-          );
-        })}
-      </View>
+    <>
+      <CartHOC />
       <Animated.View
         style={[
-          indicatorStyle,
-          {backgroundColor: isVegMode ? Colors.active : Colors.primary},
-        ]}
-      />
-    </Animated.View>
+          animatedStyle,
+          {
+            paddingBottom: bottom.bottom,
+            backgroundColor: Colors.background,
+            borderTopWidth: 1,
+            borderTopColor: Colors.border,
+          },
+        ]}>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            paddingVertical: 10,
+          }}>
+          {state?.routes?.map((route, index) => {
+            const isFocused = state.index == index;
+            const onPress = () => {
+              const event = navigation.emit({
+                type: 'tabPress',
+                target: route?.key,
+                canPreventDefault: true,
+              });
+
+              if (!isFocused && !event.defaultPrevented) {
+                navigation.navigate(route?.name);
+              }
+            };
+
+            const onLongPress = () => {
+              navigation.emit({
+                type: 'tabLongPress',
+                target: route.key,
+              });
+            };
+
+            return (
+              <ScalePress
+                onPress={onPress}
+                onLongPress={onLongPress}
+                key={index}
+                style={{
+                  flex: 1,
+                  alignItems: 'center',
+                }}>
+                {route?.name == 'Delivery' && (
+                  <DeliveryTabIcon focused={isFocused} />
+                )}
+                {route?.name == 'Reorder' && (
+                  <ReorderTabIcon focused={isFocused} />
+                )}
+                {route?.name == 'Profile' && (
+                  <ProfileTabIcon focused={isFocused} />
+                )}
+              </ScalePress>
+            );
+          })}
+        </View>
+        <Animated.View
+          style={[
+            indicatorStyle,
+            {backgroundColor: isVegMode ? Colors.active : Colors.primary},
+          ]}
+        />
+      </Animated.View>
+    </>
   );
 };
 

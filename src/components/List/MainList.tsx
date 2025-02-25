@@ -93,7 +93,7 @@ const MainList: FC = () => {
     viewableItems: Array<ViewToken>;
   }) => {
     const restaurantVisible = viewableItems.some(
-      item => item?.section?.title === 'Restaurants' && item?.isViewable,
+      item => item?.section?.title === 'Restaurant' && item?.isViewable, // Changed from 'Restaurants' to 'Restaurant'
     );
     setIsRestaurantsVisible(restaurantVisible);
   };

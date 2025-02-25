@@ -5,12 +5,14 @@ import Icon from '@components/ui/Icon';
 import CustomText from '@components/global/CustomText';
 import {
   addItemToCart,
+  removeCustomizableItem,
   removeItemFromCart,
   selectRestaurantCartItem,
 } from '@states/reducers/cartSlice';
 import CustomModal from '@components/modal/CustomModal';
 import AddItemModal from '@components/modal/AddItemModal';
 import RepeatItemModal from '@components/modal/RepeatItemModal';
+import RemoveItemModal from '@components/modal/RemoveItemModal';
 
 const AddButton: React.FC<{item: any; restaurant: any}> = ({
   item,
@@ -102,11 +104,29 @@ const AddButton: React.FC<{item: any; restaurant: any}> = ({
     }
   }, [dispatch, item, restaurant, cart]);
 
+  const openRemoveModal = () => {
+    modalRef.current?.openModal(
+      <RemoveItemModal
+        item={item}
+        closeModal={() => modalRef.current?.closeModal()}
+        restaurant={restaurant}
+      />,
+    );
+  };
+
   const removeCartHandler = useCallback(() => {
     if (item?.isCustomizable) {
-      if (cart !== undefined) {
-        console.log('open modal');
+      if (cart?.customization && cart?.customization?.length > 1) {
+        openRemoveModal();
+        return;
       }
+      dispatch(
+        removeCustomizableItem({
+          restaurant_id: restaurant?.id,
+          customizationId: cart?.customization![0]?.id,
+          itemId: item?.id,
+        }),
+      );
     } else {
       dispatch(
         removeItemFromCart({

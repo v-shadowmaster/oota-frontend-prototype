@@ -1,3 +1,4 @@
+import SeletonScreen from '@components/global/SeletonScreen';
 import LoginScreen from '@features/auth/LoginScreen';
 import SplashScreen from '@features/auth/SplashScreen';
 import RestaurantScreen from '@features/restaurants/RestaurantScreen';
@@ -22,6 +23,13 @@ const Navigation: FC = () => {
         <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
+          options={{
+            animation: 'fade',
+          }}
+        />
+        <Stack.Screen
+          name="SkeletonScreen"
+          component={SeletonScreen}
           options={{
             animation: 'fade',
           }}

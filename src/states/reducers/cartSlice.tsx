@@ -156,9 +156,7 @@ export const cartSlice = createSlice({
             existingItem.cartPrice =
               (existingItem.cartPrice || 0) + customization.price;
           } else {
-            const newCustomizationId = `c${
-              (existingItem?.customization?.length || 0) + 1
-            }`;
+            const newCustomizationId = uuid();
 
             if (!existingItem.customization) {
               existingItem.customization = [];

@@ -8,11 +8,11 @@ import SortingAndFilters from '@components/home/SortingAndFilters';
 import {restaurantFilterOptions, restaurantItemData} from '@utils/dummyData';
 import HorizontalLine from '@components/ui/HorizontalLine';
 import FoodCard from './FoodCard';
+import SearchAndOffers from '@components/restaurants/SearchAndOffers';
 
 const RestaurantScreen: React.FC = () => {
   const route = useRoute() as any;
   const restaurant = route?.params?.item;
-
   const insets = useSafeAreaInsets();
 
   const renderItem = ({item}: any) => {
@@ -22,13 +22,13 @@ const RestaurantScreen: React.FC = () => {
   return (
     <>
       <View style={{height: Platform.OS === 'android' ? insets.top : 0}} />
-      <CustomSafeAreaView>
+      <CustomSafeAreaView style={{flex: 1, position: 'relative'}}>
         <RestaurantHeader
           title={restaurant?.name}
           rating={restaurant?.rating}
         />
 
-        <View style={styles.sortingContainer}>
+        <View style={[styles.sortingContainer, {marginTop: 8}]}>
           <SortingAndFilters
             menuTitle="Filter"
             options={restaurantFilterOptions}
@@ -45,8 +45,12 @@ const RestaurantScreen: React.FC = () => {
               <HorizontalLine />
             </View>
           )}
-          contentContainerStyle={styles.scrollContainerStyle}
+          contentContainerStyle={[
+            styles.scrollContainerStyle,
+            {paddingTop: 8, paddingBottom: 120}, // extra bottom padding to avoid overlap
+          ]}
         />
+        <SearchAndOffers item={restaurant} />
       </CustomSafeAreaView>
     </>
   );
@@ -55,7 +59,13 @@ const RestaurantScreen: React.FC = () => {
 export default RestaurantScreen;
 
 const styles = StyleSheet.create({
-  sortingContainer: {},
-  mainPadding: {},
-  scrollContainerStyle: {},
+  sortingContainer: {
+    marginVertical: 8,
+  },
+  mainPadding: {
+    paddingHorizontal: 16,
+  },
+  scrollContainerStyle: {
+    paddingBottom: 16,
+  },
 });

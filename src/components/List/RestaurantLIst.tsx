@@ -17,9 +17,10 @@ const RestaurantLIst = () => {
   return (
     <View>
       <CustomText
-        style={{fontFamily: 'Poppins-Medium', alignSelf: 'center', padding: 12}}
+        fontFamily="Poppins-Medium"
+        style={{alignSelf: 'center', padding: 12}}
         fontSize={14}>
-        1823 restaurants deliverying to you
+        1823 restaurants delivering to you
       </CustomText>
       <HorizontalLine />
 

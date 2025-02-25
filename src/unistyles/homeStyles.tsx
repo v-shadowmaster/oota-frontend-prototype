@@ -4,20 +4,77 @@ import {RFValue} from 'react-native-responsive-fontsize';
 import {isBannerHeight} from './Constants';
 
 export const homeStyles = createStyleSheet(({colors, device, border}) => ({
+  // New styles for the SearchAndOffers component
+  searchOfferWrapper: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    paddingHorizontal: 8  ,
+    paddingVertical: 8,
+    backgroundColor: '#fff',
+    elevation: 10,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: -2},
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+  },
+  offerContainer: {
+    borderRadius: 12,
+    padding: 16,
+    elevation: 3,
+  },
+  offerContent: {
+    flexDirection: 'column',
+  },
+  offerHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  itemInfo: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  animatedCount: {
+    fontSize: RFValue(18),
+    fontFamily: 'Poppins-Bold',
+    color: '#fff',
+  },
+  offerText: {
+    fontSize: RFValue(16),
+    fontFamily: 'Poppins-Regular',
+    color: '#fff',
+    marginLeft: 4,
+  },
+  offerSubtitle: {
+    fontSize: RFValue(14),
+    fontFamily: 'Poppins-Regular',
+    color: '#fff',
+    textAlign: 'center',
+  },
+  confetti: {
+    position: 'absolute',
+    top: -20,
+    right: -20,
+    width: 60,
+    height: 60,
+  },
+  // Existing styles
   container: {
     flex: 1,
     backgroundColor: colors.background,
   },
   topHidingContainer: {
     marginTop: isBannerHeight,
-
     backgroundColor: colors.background,
   },
   topHeader: {
     zIndex: 1,
     alignSelf: 'center',
     paddingHorizontal: 10,
-    marginTop: 0, // Reduced from 10
+    marginTop: 0,
   },
   animatedText: {
     fontSize: RFValue(10.5),
@@ -31,7 +88,7 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
   exploreContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 4, // Reduced from 40
+    paddingHorizontal: 4,
   },
   flexRowBetween: {
     flexDirection: 'row',
@@ -67,10 +124,8 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     resizeMode: 'contain',
   },
   lottie: {
-    width: '100%', // Use full container width
-
+    width: '100%',
     bottom: -1,
-
     aspectRatio: 1,
   },
   rollingText: {
@@ -107,7 +162,7 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
   lottieContainer: {
     backgroundColor: '#CC152D',
     height: device.height * 0.54,
-    width: '100%', // Ensure full width
+    width: '100%',
     justifyContent: 'flex-end',
     position: 'absolute',
     zIndex: -3,
@@ -124,7 +179,6 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
   },
   locationMainText: {
     fontSize: RFValue(16),
-
     color: '#fff',
   },
   locationSubText: {
@@ -213,7 +267,6 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
     padding: 8,
-
     borderColor: '#0f0f0f',
     borderWidth: 2,
   },
@@ -223,7 +276,6 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     justifyContent: 'center',
     paddingHorizontal: 16,
   },
-
   rightTab: {
     backgroundColor: colors.background,
     borderTopRightRadius: 12,
@@ -235,7 +287,6 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     borderWidth: 2,
     gap: 4,
   },
-
   exploreSectionContainer: {
     backgroundColor: colors.background,
     paddingTop: 16,
