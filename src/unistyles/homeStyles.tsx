@@ -10,7 +10,7 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     bottom: 0,
     left: 0,
     right: 0,
-    paddingHorizontal: 8  ,
+    paddingHorizontal: 8,
     paddingVertical: 8,
     backgroundColor: '#fff',
     elevation: 10,
@@ -67,7 +67,7 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     backgroundColor: colors.background,
   },
   topHidingContainer: {
-    marginTop: isBannerHeight,
+    // marginTop: isBannerHeight,
     backgroundColor: colors.background,
   },
   topHeader: {

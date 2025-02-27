@@ -20,6 +20,8 @@ const LocationHeader = () => {
     };
   });
 
+  
+
   return (
     <Animated.View
       style={[opacityFadingStyles, {paddingTop: 10, marginTop: 10}]}>

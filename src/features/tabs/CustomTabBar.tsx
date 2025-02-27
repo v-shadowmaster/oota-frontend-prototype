@@ -18,6 +18,8 @@ const CustomTabBar: FC<BottomTabBarProps> = props => {
   const bottom = useSafeAreaInsets();
   const {styles} = useStyles();
 
+  const isLiveTabFocused = state.routes[state.index]?.name === 'Live';
+
   const animatedStyle = useAnimatedStyle(() => {
     const translateY = scrollY.value === 1 ? 100 : 0;
     return {
