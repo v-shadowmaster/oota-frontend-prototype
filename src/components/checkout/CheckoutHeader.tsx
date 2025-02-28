@@ -13,7 +13,6 @@ const CheckoutHeader: React.FC<{title: string}> = ({title}) => {
         <Pressable onPress={() => goBack()}>
           <Icon name="chevron-back" iconFamily="Ionicons" size={16} />
         </Pressable>
-
         <View>
           <CustomText
             style={[{fontFamily: 'Poppins-Bold'}, styles.text]}

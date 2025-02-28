@@ -42,3 +42,11 @@ export async function push(routeName: string, params?: object) {
 export async function prepareNavigation() {
   await navigationRef.isReady();
 }
+
+export async function replace(routeName: string, params?: object) {
+  await navigationRef.isReady();
+
+  if (navigationRef.isReady()) {
+    navigationRef.dispatch(StackActions.replace(routeName, params));
+  }
+}

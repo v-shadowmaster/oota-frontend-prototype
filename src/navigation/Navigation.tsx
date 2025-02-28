@@ -2,6 +2,7 @@ import SeletonScreen from '@components/global/SeletonScreen';
 import LoginScreen from '@features/auth/LoginScreen';
 import SplashScreen from '@features/auth/SplashScreen';
 import CheckoutScreen from '@features/checkout/CheckoutScreen';
+import OrderSuccessScreen from '@features/checkout/OrderSuccessScreen';
 import RestaurantScreen from '@features/restaurants/RestaurantScreen';
 import AnimatedTabs from '@features/tabs/AnimatedTabs';
 import {NavigationContainer} from '@react-navigation/native';
@@ -24,6 +25,14 @@ const Navigation: FC = () => {
         <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
+          options={{
+            animation: 'fade',
+          }}
+        />
+
+        <Stack.Screen
+          name="OrderSuccessScreen"
+          component={OrderSuccessScreen}
           options={{
             animation: 'fade',
           }}
