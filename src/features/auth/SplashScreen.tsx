@@ -1,13 +1,9 @@
-import {Platform, StatusBar, StyleSheet, View, Text, Image} from 'react-native';
 import React, {useEffect} from 'react';
-import {useStyles} from 'react-native-unistyles';
-import {splashStyles} from '@unistyles/authStyles';
+import {View, Text, StyleSheet, StatusBar} from 'react-native';
+import Animated, {FadeIn} from 'react-native-reanimated';
 import {resetAndNavigate} from '@utils/NavigationUtils';
-import Animated, {FadeInDown} from 'react-native-reanimated';
 
 const SplashScreen = () => {
-  const {styles} = useStyles(splashStyles);
-
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       resetAndNavigate('LoginScreen');
@@ -18,15 +14,32 @@ const SplashScreen = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar hidden={true} />
-      <Image
-        source={require('@assets/images/logo.png')}
-        style={styles.logoImage}
-      />
+      <StatusBar hidden />
+      <View style={styles.logoWrapper}>
+        {/* First line in Bold */}
+        <Text style={styles.lineBold}>oota</Text>
+      </View>
     </View>
   );
 };
 
 export default SplashScreen;
 
-const styles = StyleSheet.create({});
+//rgb(11, 146, 69)
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#0F984A', // Matches the requested color code
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  logoWrapper: {
+    alignItems: 'center',
+  },
+  lineBold: {
+    fontFamily: 'Poppins-Bold', // Ensure you've linked "Poppins-Bold"
+    fontSize: 48,
+    color: '#000', // Black text, similar to Uber Eats style
+  },
+});
