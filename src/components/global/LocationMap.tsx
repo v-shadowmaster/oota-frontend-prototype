@@ -1,133 +1,153 @@
-// import React, {useState, useEffect} from 'react';
-// import {
-//   View,
-//   Text,
-//   ActivityIndicator,
-//   StyleSheet,
-//   PermissionsAndroid,
-//   Platform,
-// } from 'react-native';
-// import MapView, {Marker} from 'react-native-maps';
-// // Importing react-native-geolocation-service which offers improved performance and accuracy
-// import Geolocation from 'react-native-geolocation-service';
+import React, {useState, useEffect} from 'react';
+import {
+  View,
+  Text,
+  ActivityIndicator,
+  StyleSheet,
+  PermissionsAndroid,
+  Platform,
+} from 'react-native';
+import MapView, {Marker, Region} from 'react-native-maps';
+import Geolocation from 'react-native-geolocation-service';
 
-// const LocationMap = () => {
-//   // State to store user's location and loading status
-//   const [location, setLocation] = useState(null);
-//   const [loading, setLoading] = useState(true);
+// Define the interface for the coordinates returned by Geolocation
+interface Coordinates {
+  latitude: number;
+  longitude: number;
+  altitude?: number | null;
+  accuracy?: number;
+  altitudeAccuracy?: number | null;
+  heading?: number | null;
+  speed?: number | null;
+}
 
-//   /*
-//    * Function to request location permission on Android.
-//    * iOS handles location permissions automatically (with proper Info.plist configuration).
-//    */
-//   const requestLocationPermission = async () => {
-//     if (Platform.OS === 'android') {
-//       try {
-//         const granted = await PermissionsAndroid.request(
-//           PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-//           {
-//             title: 'Location Access Required',
-//             message:
-//               'This app needs access to your location to show your current position on the map.',
-//             buttonPositive: 'OK',
-//             buttonNegative: 'Cancel',
-//           },
-//         );
-//         return granted === PermissionsAndroid.RESULTS.GRANTED;
-//       } catch (err) {
-//         console.warn('Permission error:', err);
-//         return false;
-//       }
-//     }
-//     return true; // iOS automatically grants permission if configured properly
-//   };
+// Define the interface for the response returned by Geolocation.getCurrentPosition
+interface GeolocationResponse {
+  coords: Coordinates;
+  timestamp: number;
+}
 
-//   /**
-//    * useEffect hook runs on component mount to fetch the user's current location.
-//    */
-//   useEffect(() => {
-//     const fetchLocation = async () => {
-//       const hasPermission = await requestLocationPermission();
-//       if (!hasPermission) {
-//         // If permission is not granted, stop the loader and you can add additional error handling here.
-//         setLoading(false);
-//         return;
-//       }
+// Define a local interface for the error object returned in the error callback.
+interface GeolocationError {
+  code: number;
+  message: string;
+}
 
-//       // Get the current position with high accuracy settings.
-//       Geolocation.getCurrentPosition(
-//         position => {
-//           // Successfully obtained the user's location; update state.
-//           setLocation(position.coords);
-//           setLoading(false);
-//         },
-//         error => {
-//           // Log any errors and stop the loader.
-//           console.warn('Location error:', error);
-//           setLoading(false);
-//         },
-//         {
-//           enableHighAccuracy: true, // Use GPS for high accuracy
-//           timeout: 15000, // Wait up to 15 seconds
-//           maximumAge: 10000, // Accept cached location up to 10 seconds old
-//         },
-//       );
-//     };
+const LocationMap: React.FC = () => {
+  // State to store the user's location and loading status.
+  const [location, setLocation] = useState<Coordinates | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
-//     fetchLocation();
-//   }, []);
+  /**
+   * Requests location permission on Android.
+   * iOS permissions must be configured in Info.plist.
+   */
+  const requestLocationPermission = async (): Promise<boolean> => {
+    if (Platform.OS === 'android') {
+      try {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+          {
+            title: 'Location Access Required',
+            message:
+              'This app needs access to your location to show your current position on the map.',
+            buttonPositive: 'OK',
+            buttonNegative: 'Cancel',
+          },
+        );
+        return granted === PermissionsAndroid.RESULTS.GRANTED;
+      } catch (err) {
+        console.warn('Permission error:', err);
+        return false;
+      }
+    }
+    return true; // iOS automatically handles permission if properly configured.
+  };
 
-//   // If still loading, show an activity indicator (spinner)
-//   if (loading) {
-//     return (
-//       <View style={styles.loaderContainer}>
-//         <ActivityIndicator size="large" color="#0000ff" />
-//       </View>
-//     );
-//   }
+  /**
+   * useEffect hook runs once when the component mounts to fetch the user's location.
+   */
+  useEffect(() => {
+    const fetchLocation = async () => {
+      const hasPermission = await requestLocationPermission();
+      if (!hasPermission) {
+        setLoading(false);
+        return;
+      }
 
-//   // If location is not available after loading, display an error message
-//   if (!location) {
-//     return (
-//       <View style={styles.loaderContainer}>
-//         <Text>Unable to fetch location</Text>
-//       </View>
-//     );
-//   }
+      // Use high accuracy settings to get the current position.
+      Geolocation.getCurrentPosition(
+        (position: GeolocationResponse) => {
+          // Update state with the fetched coordinates.
+          setLocation(position.coords);
+          setLoading(false);
+        },
+        (error: GeolocationError) => {
+          // Log any errors and stop the loader.
+          console.warn('Location error:', error);
+          setLoading(false);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 15000, // Timeout after 15 seconds.
+          maximumAge: 10000, // Accept cached location up to 10 seconds old.
+        },
+      );
+    };
 
-//   // Once location is fetched, render a MapView with a marker at the user's current location.
-//   return (
-//     <MapView
-//       style={styles.map}
-//       initialRegion={{
-//         latitude: location.latitude,
-//         longitude: location.longitude,
-//         latitudeDelta: 0.01, // Smaller delta values zoom in more
-//         longitudeDelta: 0.01,
-//       }}
-//       showsUserLocation={true} // Automatically shows the blue dot for the user's location
-//     >
-//       <Marker
-//         coordinate={{
-//           latitude: location.latitude,
-//           longitude: location.longitude,
-//         }}
-//         title="Your Location"
-//         description="You are here"
-//       />
-//     </MapView>
-//   );
-// };
+    fetchLocation();
+  }, []);
 
-// const styles = StyleSheet.create({
-//   loaderContainer: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-//   map: {
-//     flex: 1,
-//   },
-// });
+  // Display an activity indicator while the location is being fetched.
+  if (loading) {
+    return (
+      <View style={styles.loaderContainer}>
+        <ActivityIndicator size="large" color="#0000ff" />
+      </View>
+    );
+  }
 
-// export default LocationMap;
+  // If the location is unavailable, display an error message.
+  if (!location) {
+    return (
+      <View style={styles.loaderContainer}>
+        <Text>Unable to fetch location</Text>
+      </View>
+    );
+  }
+
+  // Define the region for the map based on the fetched location.
+  const region: Region = {
+    latitude: location.latitude,
+    longitude: location.longitude,
+    latitudeDelta: 0.01, // Smaller delta zooms in more.
+    longitudeDelta: 0.01,
+  };
+
+  // Render the map with a marker at the user's location.
+  return (
+    <MapView style={styles.map} initialRegion={region} showsUserLocation={true}>
+      <Marker
+        coordinate={{
+          latitude: location.latitude,
+          longitude: location.longitude,
+        }}
+        title="Your Location"
+        description="You are here"
+      />
+    </MapView>
+  );
+};
+
+const styles = StyleSheet.create({
+  loaderContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  map: {
+    flex: 1,
+  },
+});
+
+export default LocationMap;
