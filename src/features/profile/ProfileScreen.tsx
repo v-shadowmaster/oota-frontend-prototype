@@ -1,31 +1,105 @@
-import {View, Text, Image, StyleSheet} from 'react-native';
-import React from 'react';
-import {useStyles} from 'react-native-unistyles';
-import {emptyStyles} from '@unistyles/emptyStyles';
-import MapView from 'react-native-maps';
+import {
+  View,
+  Text,
+  StyleSheet,
+  PermissionsAndroid,
+  TouchableOpacity,
+  Platform,
+} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import MapView, {Marker, Region} from 'react-native-maps';
+import Geolocation from 'react-native-geolocation-service';
 
 const ProfileScreen = () => {
-  const {styles} = useStyles(emptyStyles);
+  const [location, setLocation] = useState({
+    latitude: 37.78825,
+    longitude: -122.4324,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  });
+  const [hasPermission, setHasPermission] = useState(false);
+
+  useEffect(() => {
+    requestLocationPermission();
+  }, []);
+
+  const requestLocationPermission = async () => {
+    try {
+      if (Platform.OS === 'android') {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+          {
+            title: 'Location Permission',
+            message:
+              'This app needs access to your location to show your position on the map.',
+            buttonNeutral: 'Ask Me Later',
+            buttonNegative: 'Cancel',
+            buttonPositive: 'OK',
+          },
+        );
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          setHasPermission(true);
+        }
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  };
+
+  const getLocation = () => {
+    console.log(location);
+  };
+
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignContent: 'center',
-      }}>
+    <View style={styles.container}>
       <MapView
-        style={StyleSheet.absoluteFill}
-        initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-      />
+        style={StyleSheet.absoluteFillObject}
+        pitchEnabled={false}
+        provider="google"
+        showsCompass={false}
+        showsIndoors={false}
+        showsIndoorLevelPicker={false}
+        showsTraffic={false}
+        showsScale={false}
+        showsBuildings={false}
+        showsPointsOfInterest={false}
+        region={location}
+        showsUserLocation={true}
+        showsMyLocationButton={true}>
+        <Marker coordinate={location} />
+      </MapView>
+      <TouchableOpacity style={styles.button} onPress={getLocation}>
+        <Text style={styles.buttonText}>Get current location</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  button: {
+    width: '90%',
+    height: 50,
+    alignSelf: 'center',
+    position: 'absolute',
+    bottom: 120,
+    backgroundColor: '#E23744',
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 3,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontFamily: 'Poppins-Medium',
+  },
+});
+
 export default ProfileScreen;
 
-/// AIzaSyCgbcr_CHYlWTgQLi_fk4gphXk1CXnRYMY
+// AIzaSyAvefGQbwfcfPDN9z5m5aikjjjgDkRLu1w
