@@ -26,12 +26,12 @@ const SplashScreen = () => {
 export default SplashScreen;
 
 //rgb(11, 146, 69)
-// #E3FF73
+//rgb(239, 255, 119)
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E3FF73', // Matches the requested color code
+    backgroundColor: 'rgb(239, 255, 119)', // Matches the requested color code
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
   lineBold: {
     fontFamily: 'Poppins-Bold', // Ensure you've linked "Poppins-Bold"
-    fontSize: 48,
+    fontSize: 72,
     color: '#000', // Black text, similar to Uber Eats style
   },
 });
