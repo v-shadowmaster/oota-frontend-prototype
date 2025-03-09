@@ -46,10 +46,6 @@ const ProfileScreen = () => {
     }
   };
 
-  const getLocation = () => {
-    console.log(location);
-  };
-
   return (
     <View style={styles.container}>
       <MapView
@@ -65,12 +61,10 @@ const ProfileScreen = () => {
         showsPointsOfInterest={false}
         region={location}
         showsUserLocation={true}
+        // initialRegion={}
         showsMyLocationButton={true}>
         <Marker coordinate={location} />
       </MapView>
-      <TouchableOpacity style={styles.button} onPress={getLocation}>
-        <Text style={styles.buttonText}>Get current location</Text>
-      </TouchableOpacity>
     </View>
   );
 };

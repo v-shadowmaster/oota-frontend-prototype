@@ -4,13 +4,13 @@ import Animated, {FadeIn} from 'react-native-reanimated';
 import {resetAndNavigate} from '@utils/NavigationUtils';
 
 const SplashScreen = () => {
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      resetAndNavigate('LoginScreen');
-    }, 3000);
+  // useEffect(() => {
+  //   const timeoutId = setTimeout(() => {
+  //     resetAndNavigate('LoginScreen');
+  //   }, 3000);
 
-    return () => clearTimeout(timeoutId);
-  }, []);
+  //   return () => clearTimeout(timeoutId);
+  // }, []);
 
   return (
     <View style={styles.container}>
@@ -26,11 +26,12 @@ const SplashScreen = () => {
 export default SplashScreen;
 
 //rgb(11, 146, 69)
+// #E3FF73
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0F984A', // Matches the requested color code
+    backgroundColor: '#E3FF73', // Matches the requested color code
     alignItems: 'center',
     justifyContent: 'center',
   },
