@@ -46,7 +46,7 @@ const LoginScreen: FC = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      resetAndNavigate('SkeletonScreen');
+      resetAndNavigate('UserBottomTab');
     }, 2000);
   };
   return (
