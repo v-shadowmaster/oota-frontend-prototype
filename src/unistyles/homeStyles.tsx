@@ -301,11 +301,17 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    borderRadius: 12,
+    borderRadius: 999,
     width: '100%',
-    borderWidth: 0.6,
+    borderWidth: 1,
+
     borderColor: colors.tertiary,
     paddingHorizontal: 10,
     paddingVertical: 10,
+  },
+  searchLeftSection: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
   },
 }));

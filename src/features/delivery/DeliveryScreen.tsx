@@ -46,8 +46,6 @@ const DeliveryScreen: FC = () => {
     };
   });
 
-  // this is just a piece of
-
   return (
     <View style={[styles.container, {paddingTop: 0}]}>
       <View style={{height: Platform.OS === 'android' ? insets.top : 0}} />

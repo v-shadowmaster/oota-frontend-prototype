@@ -50,9 +50,9 @@ const SearchBar: FC = () => {
   return (
     <>
       <SafeAreaView />
-      <View style={{marginTop: 14, marginBottom: 14}}>
+      <View style={{marginTop: 0, marginBottom: 14}}>
         <TouchableOpacity style={[styles.searchInputContainer]}>
-          <>
+          <View style={styles.searchLeftSection}>
             <Icon
               iconFamily="Ionicons"
               name="search"
@@ -62,10 +62,10 @@ const SearchBar: FC = () => {
             <CustomText
               fontFamily="Poppins-Medium"
               fontSize={14}
-              style={[styles.rollingText, {fontFamily: 'Poppins-Medium'}]}>
+              style={[styles.rollingText]}>
               {`search "${searchSuggestion}"`}
             </CustomText>
-          </>
+          </View>
           <Icon
             iconFamily="Ionicons"
             name="mic-outline"

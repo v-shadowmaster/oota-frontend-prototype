@@ -10,7 +10,7 @@ const HeaderSection = () => {
   const {styles} = useStyles(homeStyles);
   return (
     <>
-      <View>
+      <View style={{}}>
         <LocationHeader />
         <SearchBar />
       </View>

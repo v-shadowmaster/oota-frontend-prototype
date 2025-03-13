@@ -4,11 +4,13 @@ import {RootState} from '@states/store';
 interface UserState {
   user: any;
   isVegMode: boolean;
+  userlocation: string;
 }
 
 const initialState: UserState = {
   user: {},
   isVegMode: false,
+  userlocation: '',
 };
 
 export const userSlice = createSlice({
@@ -21,10 +23,13 @@ export const userSlice = createSlice({
     setVegMode: (state, action: PayloadAction<boolean>) => {
       state.isVegMode = action.payload;
     },
+    setLoaction: (state, action: PayloadAction<string>) => {
+      state.userlocation = action.payload;
+    },
   },
 });
 
-export const {setUser, setVegMode} = userSlice.actions;
+export const {setUser, setVegMode, setLoaction} = userSlice.actions;
 
 export const selectUser = (state: RootState) => state.user?.user;
 

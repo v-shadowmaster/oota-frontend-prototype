@@ -20,13 +20,11 @@ const LocationHeader = () => {
     };
   });
 
-  
-
   return (
     <Animated.View
       style={[opacityFadingStyles, {paddingTop: 10, marginTop: 10}]}>
       <SafeAreaView />
-      <View style={styles.flexRowBetween}>
+      <View style={[styles.flexRowBetween]}>
         <View style={styles.flexRowGap}>
           <Icon
             name="map-marker"

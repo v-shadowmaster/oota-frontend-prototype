@@ -46,7 +46,7 @@ const LoginScreen: FC = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      resetAndNavigate('UserBottomTab');
+      resetAndNavigate('ProfileScreen');
     }, 2000);
   };
   return (
