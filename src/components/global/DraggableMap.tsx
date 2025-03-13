@@ -5,23 +5,21 @@ import MapView, {Marker, Region} from 'react-native-maps';
 import {customMapStyle, indiaIntialRegion} from '@utils/CustomMap';
 import {reverseGeocode} from '@utils/mapUtils';
 
-const DraggableMap: FC<{ height: number }> = ({ height }) => {
-    
-    const [latitude,setLatitude] = useIs
+const DraggableMap: FC<{height: number; lat: number; log: number}> = ({
+  height,
+  lat,
+  log,
+}) => {
+  // const [latitude, setLatitude] = useIs;
   const isFocused = useIsFocused();
   const [markers, setMarkers] = useState<any>([]);
   const mapRef = useRef<MapView>(null);
   const Max_distance_threshold = 100000;
 
   const handleRegionChangeComplete = async (newRegion: Region) => {
-    const address = await reverseGeocode(
-      newRegion.latitude,
-      newRegion.longitude,
-      );
-      
-      const userlocation = {
-          latitude : 
-      }
+    const address = await reverseGeocode(lat, log);
+
+    console.log(address);
   };
 
   return (

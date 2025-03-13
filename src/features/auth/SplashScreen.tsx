@@ -6,7 +6,7 @@ import {resetAndNavigate} from '@utils/NavigationUtils';
 const SplashScreen = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      resetAndNavigate('ProfileScreen');
+      resetAndNavigate('LoginScreen');
     }, 3000);
 
     return () => clearTimeout(timeoutId);

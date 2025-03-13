@@ -1,7 +1,7 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "typeRoots": ["node_modules/@types", "src/types"],
+    "typeRoots": ["./src/types", "./node_modules/@types"],
     "types": ["jest"],
     "baseUrl": "./",
     "paths": {
@@ -21,7 +21,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "include": ["src/**/*", "**/*.ts", "**/*.tsx"],
+  "include": ["src/**/*", "src/types/*.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": [
     "node_modules",
     "babel.config.js",

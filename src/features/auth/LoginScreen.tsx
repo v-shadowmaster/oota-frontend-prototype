@@ -18,6 +18,7 @@ import BreakerText from '@components/ui/BreakerText';
 import PhoneInput from '@components/ui/PhoneInput';
 import {resetAndNavigate} from '@utils/NavigationUtils';
 import useKeyboardOffsetHeight from '@utils/useKeyboardOffsetHeight';
+import GetLocation from 'react-native-get-location';
 
 const LoginScreen: FC = () => {
   const animatedValue = useRef(new Animated.Value(0)).current;
@@ -25,6 +26,11 @@ const LoginScreen: FC = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [loading, setLoading] = useState(false);
   const {styles} = useStyles(loginStyles);
+
+  const [location, setLocation] = useState('');
+  const [latitude, setLatitude] = useState<any>(null);
+  const [longitude, setLongitude] = useState<any>(null);
+  const [error, setError] = useState<string>('');
 
   useEffect(() => {
     if (keyboardOffsetHeight == 0) {
@@ -46,7 +52,7 @@ const LoginScreen: FC = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      resetAndNavigate('ProfileScreen');
+      resetAndNavigate('UserBottomTab');
     }, 2000);
   };
   return (

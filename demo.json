@@ -1,0 +1,817 @@
+{
+  "plus_code": {
+    "compound_code": "3PH5+XHC Bengaluru, Karnataka, India",
+    "global_code": "7J5V3PH5+XHC"
+  },
+  "results": [
+    {
+      "address_components": [
+        {
+          "long_name": "Flot 36",
+          "short_name": "Flot 36",
+          "types": ["street_number"]
+        },
+        {
+          "long_name": "2nd Cross, Sri Anjanadri Enclave",
+          "short_name": "2nd Cross, Sri Anjanadri Enclave",
+          "types": ["route"]
+        },
+        {
+          "long_name": "Bengaluru",
+          "short_name": "Bengaluru",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Kammasandra",
+          "short_name": "Kammasandra",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Bengaluru Urban",
+          "short_name": "Bengaluru Urban",
+          "types": ["administrative_area_level_3", "political"]
+        },
+        {
+          "long_name": "Bangalore Division",
+          "short_name": "Bangalore Division",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "Karnataka",
+          "short_name": "KA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "India",
+          "short_name": "IN",
+          "types": ["country", "political"]
+        },
+        {
+          "long_name": "560049",
+          "short_name": "560049",
+          "types": ["postal_code"]
+        }
+      ],
+      "formatted_address": "Flot 36, 2nd Cross, Sri Anjanadri Enclave, Bengaluru, Kammasandra, Karnataka 560049, India",
+      "geometry": {
+        "location": {
+          "lat": 13.0804939,
+          "lng": 77.70828170000001
+        },
+        "location_type": "ROOFTOP",
+        "viewport": {
+          "northeast": {
+            "lat": 13.0818428802915,
+            "lng": 77.70963068029153
+          },
+          "southwest": {
+            "lat": 13.0791449197085,
+            "lng": 77.70693271970852
+          }
+        }
+      },
+      "navigation_points": [
+        {
+          "location": {
+            "latitude": 13.0804886,
+            "longitude": 77.7083561
+          }
+        }
+      ],
+      "place_id": "ChIJU79iKwAbrjsRGS3sDyBkDhQ",
+      "plus_code": {
+        "compound_code": "3PJ5+58 Kammasandra, Karnataka, India",
+        "global_code": "7J5V3PJ5+58"
+      },
+      "types": ["establishment", "food", "point_of_interest", "restaurant"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "65",
+          "short_name": "65",
+          "types": ["premise"]
+        },
+        {
+          "long_name": "Bengaluru",
+          "short_name": "Bengaluru",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Bengaluru Urban",
+          "short_name": "Bengaluru Urban",
+          "types": ["administrative_area_level_3", "political"]
+        },
+        {
+          "long_name": "Bangalore Division",
+          "short_name": "Bangalore Division",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "Karnataka",
+          "short_name": "KA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "India",
+          "short_name": "IN",
+          "types": ["country", "political"]
+        },
+        {
+          "long_name": "560049",
+          "short_name": "560049",
+          "types": ["postal_code"]
+        }
+      ],
+      "formatted_address": "65, Bengaluru, Kammasandra, Karnataka 560049, India",
+      "geometry": {
+        "location": {
+          "lat": 13.079102,
+          "lng": 77.7087109
+        },
+        "location_type": "ROOFTOP",
+        "viewport": {
+          "northeast": {
+            "lat": 13.0804509802915,
+            "lng": 77.7100598802915
+          },
+          "southwest": {
+            "lat": 13.0777530197085,
+            "lng": 77.70736191970849
+          }
+        }
+      },
+      "navigation_points": [
+        {
+          "location": {
+            "latitude": 13.0791015,
+            "longitude": 77.70871510000001
+          }
+        }
+      ],
+      "place_id": "ChIJBaj3ZY4arjsRXxgijwuMCUk",
+      "plus_code": {
+        "compound_code": "3PH5+JF Bengaluru, Karnataka, India",
+        "global_code": "7J5V3PH5+JF"
+      },
+      "types": ["street_address"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "3PH5+GFP",
+          "short_name": "3PH5+GFP",
+          "types": ["plus_code"]
+        },
+        {
+          "long_name": "1st Cross",
+          "short_name": "1st Cross",
+          "types": ["route"]
+        },
+        {
+          "long_name": "Bengaluru",
+          "short_name": "Bengaluru",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Kammasandra",
+          "short_name": "Kammasandra",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Bengaluru Urban",
+          "short_name": "Bengaluru Urban",
+          "types": ["administrative_area_level_3", "political"]
+        },
+        {
+          "long_name": "Bangalore Division",
+          "short_name": "Bangalore Division",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "Karnataka",
+          "short_name": "KA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "India",
+          "short_name": "IN",
+          "types": ["country", "political"]
+        },
+        {
+          "long_name": "562129",
+          "short_name": "562129",
+          "types": ["postal_code"]
+        }
+      ],
+      "formatted_address": "3PH5+GFP, 1st Cross, Kammasandra, Bengaluru, Karnataka 562129, India",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 13.0788724,
+            "lng": 77.708826
+          },
+          "southwest": {
+            "lat": 13.0787881,
+            "lng": 77.7086712
+          }
+        },
+        "location": {
+          "lat": 13.0788194,
+          "lng": 77.7087555
+        },
+        "location_type": "ROOFTOP",
+        "viewport": {
+          "northeast": {
+            "lat": 13.0801792302915,
+            "lng": 77.7100975802915
+          },
+          "southwest": {
+            "lat": 13.0774812697085,
+            "lng": 77.7073996197085
+          }
+        }
+      },
+      "navigation_points": [
+        {
+          "location": {
+            "latitude": 13.0788192,
+            "longitude": 77.70873829999999
+          }
+        }
+      ],
+      "place_id": "ChIJI_9kaI4arjsRxMSzxuIZEeE",
+      "types": ["premise", "street_address"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "3PH5+XH",
+          "short_name": "3PH5+XH",
+          "types": ["plus_code"]
+        },
+        {
+          "long_name": "Bengaluru",
+          "short_name": "Bengaluru",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Bengaluru Urban",
+          "short_name": "Bengaluru Urban",
+          "types": ["administrative_area_level_3", "political"]
+        },
+        {
+          "long_name": "Bangalore Division",
+          "short_name": "Bangalore Division",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "Karnataka",
+          "short_name": "KA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "India",
+          "short_name": "IN",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "3PH5+XH Bengaluru, Karnataka, India",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 13.08,
+            "lng": 77.709
+          },
+          "southwest": {
+            "lat": 13.079875,
+            "lng": 77.70887499999999
+          }
+        },
+        "location": {
+          "lat": 13.0799425,
+          "lng": 77.7089008
+        },
+        "location_type": "GEOMETRIC_CENTER",
+        "viewport": {
+          "northeast": {
+            "lat": 13.0812864802915,
+            "lng": 77.7102864802915
+          },
+          "southwest": {
+            "lat": 13.0785885197085,
+            "lng": 77.70758851970849
+          }
+        }
+      },
+      "place_id": "GhIJ9x4uOe4oKkAR7QZ2oV5tU0A",
+      "plus_code": {
+        "compound_code": "3PH5+XH Bengaluru, Karnataka, India",
+        "global_code": "7J5V3PH5+XH"
+      },
+      "types": ["plus_code"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "3rd Cross, Sri Anjanadri Enclave",
+          "short_name": "3rd Cross, Sri Anjanadri Enclave",
+          "types": ["route"]
+        },
+        {
+          "long_name": "Kammasandra",
+          "short_name": "Kammasandra",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Bengaluru Urban",
+          "short_name": "Bengaluru Urban",
+          "types": ["administrative_area_level_3", "political"]
+        },
+        {
+          "long_name": "Bangalore Division",
+          "short_name": "Bangalore Division",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "Karnataka",
+          "short_name": "KA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "India",
+          "short_name": "IN",
+          "types": ["country", "political"]
+        },
+        {
+          "long_name": "560049",
+          "short_name": "560049",
+          "types": ["postal_code"]
+        }
+      ],
+      "formatted_address": "3rd Cross, Sri Anjanadri Enclave, Kammasandra, Bengaluru, Karnataka 560049, India",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 13.0808207,
+            "lng": 77.7087817
+          },
+          "southwest": {
+            "lat": 13.0789994,
+            "lng": 77.7086389
+          }
+        },
+        "location": {
+          "lat": 13.0799103,
+          "lng": 77.7087081
+        },
+        "location_type": "GEOMETRIC_CENTER",
+        "viewport": {
+          "northeast": {
+            "lat": 13.0812590302915,
+            "lng": 77.71005928029152
+          },
+          "southwest": {
+            "lat": 13.0785610697085,
+            "lng": 77.7073613197085
+          }
+        }
+      },
+      "place_id": "ChIJtwGAd44arjsRojyrHRZmRws",
+      "types": ["route"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "Kammasandra",
+          "short_name": "Kammasandra",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Bengaluru Urban",
+          "short_name": "Bengaluru Urban",
+          "types": ["administrative_area_level_3", "political"]
+        },
+        {
+          "long_name": "Bangalore Division",
+          "short_name": "Bangalore Division",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "Karnataka",
+          "short_name": "KA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "India",
+          "short_name": "IN",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "Kammasandra, Karnataka, India",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 13.0846699,
+            "lng": 77.71787549999999
+          },
+          "southwest": {
+            "lat": 13.0765314,
+            "lng": 77.69484
+          }
+        },
+        "location": {
+          "lat": 13.0814222,
+          "lng": 77.70657540000001
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 13.0846699,
+            "lng": 77.71787549999999
+          },
+          "southwest": {
+            "lat": 13.0765314,
+            "lng": 77.69484
+          }
+        }
+      },
+      "place_id": "ChIJqUnGc4warjsRXTN9BQ4USCg",
+      "types": ["locality", "political"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "560049",
+          "short_name": "560049",
+          "types": ["postal_code"]
+        },
+        {
+          "long_name": "Bengaluru",
+          "short_name": "Bengaluru",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Bengaluru Urban",
+          "short_name": "Bengaluru Urban",
+          "types": ["administrative_area_level_3", "political"]
+        },
+        {
+          "long_name": "Bangalore Division",
+          "short_name": "Bangalore Division",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "Karnataka",
+          "short_name": "KA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "India",
+          "short_name": "IN",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "Bengaluru, Karnataka 560049, India",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 13.0950779,
+            "lng": 77.75020069999999
+          },
+          "southwest": {
+            "lat": 12.9959268,
+            "lng": 77.696202
+          }
+        },
+        "location": {
+          "lat": 13.0222936,
+          "lng": 77.7132065
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 13.0950779,
+            "lng": 77.75020069999999
+          },
+          "southwest": {
+            "lat": 12.9959268,
+            "lng": 77.696202
+          }
+        }
+      },
+      "place_id": "ChIJbcZWrEYQrjsRE16PISzMu5c",
+      "types": ["postal_code"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "Bengaluru South",
+          "short_name": "Bengaluru South",
+          "types": ["administrative_area_level_4", "political"]
+        },
+        {
+          "long_name": "Bengaluru Urban",
+          "short_name": "Bengaluru Urban",
+          "types": ["administrative_area_level_3", "political"]
+        },
+        {
+          "long_name": "Bangalore Division",
+          "short_name": "Bangalore Division",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "Karnataka",
+          "short_name": "KA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "India",
+          "short_name": "IN",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "Bengaluru South, Karnataka, India",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 13.1163071,
+            "lng": 77.781385
+          },
+          "southwest": {
+            "lat": 12.7323766,
+            "lng": 77.3256129
+          }
+        },
+        "location": {
+          "lat": 12.916761,
+          "lng": 77.59998399999999
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 13.1163071,
+            "lng": 77.781385
+          },
+          "southwest": {
+            "lat": 12.7323766,
+            "lng": 77.3256129
+          }
+        }
+      },
+      "place_id": "ChIJSVxzNSw-rjsRljTmG9e9IUk",
+      "types": ["administrative_area_level_4", "political"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "Bengaluru",
+          "short_name": "Bengaluru",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Bengaluru Urban",
+          "short_name": "Bengaluru Urban",
+          "types": ["administrative_area_level_3", "political"]
+        },
+        {
+          "long_name": "Bangalore Division",
+          "short_name": "Bangalore Division",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "Karnataka",
+          "short_name": "KA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "India",
+          "short_name": "IN",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "Bengaluru, Karnataka, India",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 13.173706,
+            "lng": 77.8826809
+          },
+          "southwest": {
+            "lat": 12.7342888,
+            "lng": 77.3791981
+          }
+        },
+        "location": {
+          "lat": 12.9715987,
+          "lng": 77.5945627
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 13.173706,
+            "lng": 77.8826809
+          },
+          "southwest": {
+            "lat": 12.7342888,
+            "lng": 77.3791981
+          }
+        }
+      },
+      "place_id": "ChIJbU60yXAWrjsR4E9-UejD3_g",
+      "types": ["locality", "political"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "Bengaluru Urban",
+          "short_name": "Bengaluru Urban",
+          "types": ["administrative_area_level_3", "political"]
+        },
+        {
+          "long_name": "Bangalore Division",
+          "short_name": "Bangalore Division",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "Karnataka",
+          "short_name": "KA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "India",
+          "short_name": "IN",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "Bengaluru Urban, Karnataka, India",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 13.2330371,
+            "lng": 77.8360271
+          },
+          "southwest": {
+            "lat": 12.6574396,
+            "lng": 77.3256129
+          }
+        },
+        "location": {
+          "lat": 12.9700247,
+          "lng": 77.65361249999999
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 13.2330371,
+            "lng": 77.8360271
+          },
+          "southwest": {
+            "lat": 12.6574396,
+            "lng": 77.3256129
+          }
+        }
+      },
+      "place_id": "ChIJ_Q7NCkQWrjsRn2yP7O-T8Fg",
+      "types": ["administrative_area_level_3", "political"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "Bangalore Division",
+          "short_name": "Bangalore Division",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "Karnataka",
+          "short_name": "KA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "India",
+          "short_name": "IN",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "Bangalore Division, Karnataka, India",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 15.035999,
+            "lng": 78.5877024
+          },
+          "southwest": {
+            "lat": 12.2432312,
+            "lng": 74.6252159
+          }
+        },
+        "location": {
+          "lat": 13.733253,
+          "lng": 76.64127119999999
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 15.035999,
+            "lng": 78.5877024
+          },
+          "southwest": {
+            "lat": 12.2432312,
+            "lng": 74.6252159
+          }
+        }
+      },
+      "place_id": "ChIJkR0BH8wWrjsRgYRqfBrYW58",
+      "types": ["administrative_area_level_2", "political"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "Karnataka",
+          "short_name": "KA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "India",
+          "short_name": "IN",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "Karnataka, India",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 18.4777206,
+            "lng": 78.5877024
+          },
+          "southwest": {
+            "lat": 11.5944707,
+            "lng": 74.05399349999999
+          }
+        },
+        "location": {
+          "lat": 15.3172775,
+          "lng": 75.7138884
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 18.4777206,
+            "lng": 78.5877024
+          },
+          "southwest": {
+            "lat": 11.5944707,
+            "lng": 74.05399349999999
+          }
+        }
+      },
+      "place_id": "ChIJj0i_N0xaozsR1Xx10YzS8UE",
+      "types": ["administrative_area_level_1", "political"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "India",
+          "short_name": "IN",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "India",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 35.6733149,
+            "lng": 97.39535869999999
+          },
+          "southwest": {
+            "lat": 6.4626999,
+            "lng": 68.1097
+          }
+        },
+        "location": {
+          "lat": 20.593684,
+          "lng": 78.96288
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 35.6733149,
+            "lng": 97.39535869999999
+          },
+          "southwest": {
+            "lat": 6.4626999,
+            "lng": 68.1097
+          }
+        }
+      },
+      "place_id": "ChIJkbeSa_BfYzARphNChaFPjNc",
+      "types": ["country", "political"]
+    }
+  ],
+  "status": "OK"
+}
+
+
+
+
+

@@ -1,0 +1,583 @@
+{
+  "plus_code": {
+    "compound_code": "8XF9+54W Cupertino, CA, USA",
+    "global_code": "849V8XF9+54W"
+  },
+  "results": [
+    {
+      "address_components": [
+        {
+          "long_name": "Stevens Creek and De Anza",
+          "short_name": "Stevens Creek and De Anza",
+          "types": ["establishment", "point_of_interest", "transit_station"]
+        },
+        {
+          "long_name": "Cupertino",
+          "short_name": "Cupertino",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Santa Clara County",
+          "short_name": "Santa Clara County",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        },
+        {
+          "long_name": "95014",
+          "short_name": "95014",
+          "types": ["postal_code"]
+        }
+      ],
+      "formatted_address": "Stevens Creek and De Anza, Cupertino, CA 95014, USA",
+      "geometry": {
+        "location": {
+          "lat": 37.3228944,
+          "lng": -122.0323762
+        },
+        "location_type": "GEOMETRIC_CENTER",
+        "viewport": {
+          "northeast": {
+            "lat": 37.3242433802915,
+            "lng": -122.0310272197085
+          },
+          "southwest": {
+            "lat": 37.3215454197085,
+            "lng": -122.0337251802915
+          }
+        }
+      },
+      "navigation_points": [
+        {
+          "location": {
+            "latitude": 37.3228915,
+            "longitude": -122.0323299
+          }
+        }
+      ],
+      "place_id": "ChIJW2w6fq61j4ARzpIGYC4Fwlg",
+      "plus_code": {
+        "compound_code": "8XF9+52 Cupertino, CA, USA",
+        "global_code": "849V8XF9+52"
+      },
+      "types": ["establishment", "point_of_interest", "transit_station"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "9292",
+          "short_name": "9292",
+          "types": ["street_number"]
+        },
+        {
+          "long_name": "South De Anza Boulevard",
+          "short_name": "S De Anza Blvd",
+          "types": ["route"]
+        },
+        {
+          "long_name": "San Jose",
+          "short_name": "San Jose",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Santa Clara County",
+          "short_name": "Santa Clara County",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        },
+        {
+          "long_name": "95129",
+          "short_name": "95129",
+          "types": ["postal_code"]
+        }
+      ],
+      "formatted_address": "9292 S De Anza Blvd, San Jose, CA 95129, USA",
+      "geometry": {
+        "location": {
+          "lat": 37.322745,
+          "lng": -122.0320599
+        },
+        "location_type": "ROOFTOP",
+        "viewport": {
+          "northeast": {
+            "lat": 37.32409398029149,
+            "lng": -122.0307109197085
+          },
+          "southwest": {
+            "lat": 37.32139601970849,
+            "lng": -122.0334088802915
+          }
+        }
+      },
+      "navigation_points": [
+        {
+          "location": {
+            "latitude": 37.3227449,
+            "longitude": -122.0321115
+          }
+        }
+      ],
+      "place_id": "ChIJm48-h661j4ARoWyl2FK0Wkc",
+      "plus_code": {
+        "compound_code": "8XF9+35 San Jose, CA, USA",
+        "global_code": "849V8XF9+35"
+      },
+      "types": ["street_address"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "10002",
+          "short_name": "10002",
+          "types": ["street_number"]
+        },
+        {
+          "long_name": "North De Anza Boulevard",
+          "short_name": "N De Anza Blvd",
+          "types": ["route"]
+        },
+        {
+          "long_name": "Cupertino",
+          "short_name": "Cupertino",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Santa Clara County",
+          "short_name": "Santa Clara County",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        },
+        {
+          "long_name": "95014",
+          "short_name": "95014",
+          "types": ["postal_code"]
+        }
+      ],
+      "formatted_address": "10002 N De Anza Blvd, Cupertino, CA 95014, USA",
+      "geometry": {
+        "location": {
+          "lat": 37.32316,
+          "lng": -122.032178
+        },
+        "location_type": "RANGE_INTERPOLATED",
+        "viewport": {
+          "northeast": {
+            "lat": 37.3245089802915,
+            "lng": -122.0308290197085
+          },
+          "southwest": {
+            "lat": 37.32181101970851,
+            "lng": -122.0335269802915
+          }
+        }
+      },
+      "place_id": "Ei4xMDAwMiBOIERlIEFuemEgQmx2ZCwgQ3VwZXJ0aW5vLCBDQSA5NTAxNCwgVVNBIhsSGQoUChIJvZXBe661j4AREGKwK5NCl_MQkk4",
+      "types": ["street_address"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "10000-10004",
+          "short_name": "10000-10004",
+          "types": ["street_number"]
+        },
+        {
+          "long_name": "North De Anza Boulevard",
+          "short_name": "N De Anza Blvd",
+          "types": ["route"]
+        },
+        {
+          "long_name": "Cupertino",
+          "short_name": "Cupertino",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Santa Clara County",
+          "short_name": "Santa Clara County",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        },
+        {
+          "long_name": "95014",
+          "short_name": "95014",
+          "types": ["postal_code"]
+        }
+      ],
+      "formatted_address": "10000-10004 N De Anza Blvd, Cupertino, CA 95014, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 37.3233441,
+            "lng": -122.0321718
+          },
+          "southwest": {
+            "lat": 37.3229759,
+            "lng": -122.0321842
+          }
+        },
+        "location": {
+          "lat": 37.32316,
+          "lng": -122.032178
+        },
+        "location_type": "GEOMETRIC_CENTER",
+        "viewport": {
+          "northeast": {
+            "lat": 37.3245089802915,
+            "lng": -122.0308290197085
+          },
+          "southwest": {
+            "lat": 37.3218110197085,
+            "lng": -122.0335269802915
+          }
+        }
+      },
+      "place_id": "ChIJvZXBe661j4AREGKwK5NCl_M",
+      "types": ["route"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "8XF9+54",
+          "short_name": "8XF9+54",
+          "types": ["plus_code"]
+        },
+        {
+          "long_name": "Cupertino",
+          "short_name": "Cupertino",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Santa Clara County",
+          "short_name": "Santa Clara County",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "8XF9+54 Cupertino, CA, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 37.323,
+            "lng": -122.032125
+          },
+          "southwest": {
+            "lat": 37.322875,
+            "lng": -122.03225
+          }
+        },
+        "location": {
+          "lat": 37.3229978,
+          "lng": -122.0321823
+        },
+        "location_type": "GEOMETRIC_CENTER",
+        "viewport": {
+          "northeast": {
+            "lat": 37.32428648029149,
+            "lng": -122.0308385197085
+          },
+          "southwest": {
+            "lat": 37.32158851970849,
+            "lng": -122.0335364802915
+          }
+        }
+      },
+      "place_id": "GhIJCNft_VepQkARpIBZRg-CXsA",
+      "plus_code": {
+        "compound_code": "8XF9+54 Cupertino, CA, USA",
+        "global_code": "849V8XF9+54"
+      },
+      "types": ["plus_code"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "Cupertino",
+          "short_name": "Cupertino",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Santa Clara County",
+          "short_name": "Santa Clara County",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "Cupertino, CA, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 37.340627,
+            "lng": -121.9957641
+          },
+          "southwest": {
+            "lat": 37.27846,
+            "lng": -122.092176
+          }
+        },
+        "location": {
+          "lat": 37.3229978,
+          "lng": -122.0321823
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 37.340627,
+            "lng": -121.9957641
+          },
+          "southwest": {
+            "lat": 37.27846,
+            "lng": -122.092176
+          }
+        }
+      },
+      "place_id": "ChIJq3fTG1e0j4ARtHjho-E_TTk",
+      "types": ["locality", "political"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "95014",
+          "short_name": "95014",
+          "types": ["postal_code"]
+        },
+        {
+          "long_name": "Cupertino",
+          "short_name": "Cupertino",
+          "types": ["locality", "political"]
+        },
+        {
+          "long_name": "Santa Clara County",
+          "short_name": "Santa Clara County",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "Cupertino, CA 95014, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 37.341595,
+            "lng": -121.9955771
+          },
+          "southwest": {
+            "lat": 37.247995,
+            "lng": -122.143823
+          }
+        },
+        "location": {
+          "lat": 37.31317,
+          "lng": -122.0723816
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 37.341595,
+            "lng": -121.9955771
+          },
+          "southwest": {
+            "lat": 37.247995,
+            "lng": -122.143823
+          }
+        }
+      },
+      "place_id": "ChIJyTSQVXm0j4ARmdUQoA1BpwQ",
+      "postcode_localities": ["Cupertino", "MONTE VISTA", "Permanente"],
+      "types": ["postal_code"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "Santa Clara County",
+          "short_name": "Santa Clara County",
+          "types": ["administrative_area_level_2", "political"]
+        },
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "Santa Clara County, CA, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 37.484637,
+            "lng": -121.208178
+          },
+          "southwest": {
+            "lat": 36.8929759,
+            "lng": -122.202653
+          }
+        },
+        "location": {
+          "lat": 37.2938907,
+          "lng": -121.7195459
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 37.484637,
+            "lng": -121.208178
+          },
+          "southwest": {
+            "lat": 36.8929759,
+            "lng": -122.202653
+          }
+        }
+      },
+      "place_id": "ChIJd_Y0eVIvkIARuQyDN0F1LBA",
+      "types": ["administrative_area_level_2", "political"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "California",
+          "short_name": "CA",
+          "types": ["administrative_area_level_1", "political"]
+        },
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "California, USA",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 42.009503,
+            "lng": -114.131211
+          },
+          "southwest": {
+            "lat": 32.528832,
+            "lng": -124.482003
+          }
+        },
+        "location": {
+          "lat": 36.778261,
+          "lng": -119.4179324
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 42.009503,
+            "lng": -114.131211
+          },
+          "southwest": {
+            "lat": 32.528832,
+            "lng": -124.482003
+          }
+        }
+      },
+      "place_id": "ChIJPV4oX_65j4ARVW8IJ6IJUYs",
+      "types": ["administrative_area_level_1", "political"]
+    },
+    {
+      "address_components": [
+        {
+          "long_name": "United States",
+          "short_name": "US",
+          "types": ["country", "political"]
+        }
+      ],
+      "formatted_address": "United States",
+      "geometry": {
+        "bounds": {
+          "northeast": {
+            "lat": 74.071038,
+            "lng": -66.885417
+          },
+          "southwest": {
+            "lat": 18.7763,
+            "lng": 166.9999999
+          }
+        },
+        "location": {
+          "lat": 38.7945952,
+          "lng": -106.5348379
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+          "northeast": {
+            "lat": 74.071038,
+            "lng": -66.885417
+          },
+          "southwest": {
+            "lat": 18.7763,
+            "lng": 166.9999999
+          }
+        }
+      },
+      "place_id": "ChIJCzYy5IS16lQRQrfeQ5K5Oxw",
+      "types": ["country", "political"]
+    }
+  ],
+  "status": "OK"
+}
